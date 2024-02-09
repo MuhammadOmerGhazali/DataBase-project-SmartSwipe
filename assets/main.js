@@ -30,6 +30,41 @@ $(document).ready(function(){
         }
     });
 
+    // new phones owl carousel
+    $("#carousel-products .owl-carousel").owlCarousel({
+        loop: true,
+        nav: true,
+        dots: false,
+        responsive : {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 3
+            },
+            1000 : {
+                items: 5
+            }
+        }
+    });
+    
+    
+    $("#carousel-brands .owl-carousel").owlCarousel({
+        loop: true,
+        nav: true,
+        dots: false,
+        responsive : {
+            0: {
+                items: 5
+            },
+            600: {
+                items: 8
+            },
+            1000 : {
+                items: 10
+            }
+        }
+    });
 
     // isotope filter
     var $grid = $(".grid").isotope({

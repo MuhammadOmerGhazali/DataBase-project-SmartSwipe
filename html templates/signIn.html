@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .SignInPage {
+            display: flex;
+            height: 100vh;
+        }
+
+        .Image {
+            flex: 0 0 45%;
+            background-image: url(Images/Untitled.png);
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+
+        .Image .logo {
+            font-size: 36px;
+            font-weight: bold;
+            position: absolute;
+            top: 20px;
+            left: 30px;
+        }
+
+        .form-div {
+            flex: 0 0 55%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        .form h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .form label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            margin-left: 4%;
+            color: #666;
+        }
+
+        .form input[type="text"],
+        .form input[type="password"],
+        .form input[type="submit"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+
+        .form input[type="checkbox"] {
+            margin-right: 5px;
+            margin-left: 4%;
+        }
+
+        .form .remember-me {
+            text-align: left;
+            margin-bottom: 10px;
+            font-size: 14px;
+            
+        }
+
+        .form a {
+            color: #ffad0b;
+            text-decoration: none;
+        }
+
+        .form a:hover {
+            text-decoration: underline;
+        }
+
+        .form input[type="submit"] {
+            background-color: #ffad0b;
+            color: white;
+            cursor: pointer;
+        }
+
+        .form input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #remlabel{
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 0px;
+        }
+
+        @media (max-width: 768px) {
+            .SignInPage {
+                flex-direction: column;
+            }
+            
+            .Image {
+                order: 1; 
+                flex: 0 0 50%; 
+            }
+        
+            .form-div {
+                order: 2; 
+                flex: 0 0 50%; 
+            }
+            .Image{
+                flex: 0 0 20%;
+                margin-bottom: 70px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="SignInPage">
+        <div class="Image">
+            <div class="logo">SmartSwipe</div>
+            <p>Welcome Back</p>
+        </div>
+        <div class="form-div">
+            <div class="form">
+                <h2>Login</h2>
+                <div>Welcome back. Please login to your account</div>
+                <form action="">
+                    <div>
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username">
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password">
+                    </div>
+                    <div class="remember-me">
+                        <input type="checkbox" name="remember" id="remember">
+                        <label for="remember" id="remlabel">Remember Me</label>
+                    </div>
+                    <div>
+                        <input type="submit" value="Sign In">
+                    </div>
+                </form>
+                <div>
+                    <span>New User?</span>
+                    <a href="#">Create Account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

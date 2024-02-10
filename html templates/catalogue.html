@@ -1,0 +1,604 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+        integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+
+    <!-- Owl-carousel CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/assets/bootstrap-5.3.2/css/bootstrap.min.css">
+
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="../assets/style.css">
+
+    <title>Smart Swipe</title>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div id="header">
+            <div class="header-container">
+                <div class="logo">
+                    <a href="#">SMARTSWIPE</a>
+                </div>
+                <div class="search-bar d-none d-sm-flex" action="#">
+                    <input type="search" placeholder="Search..." aria-label="Search">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="dropdown">
+                  <button onclick="dropDown()" class="dropbtn">
+                    <i class="fas fa-user d-none d-md-inline"></i>
+                    <span>
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                  </button>
+                  <div id="myDropdown" class="dropdown-content">
+                    <a href="#about">About</a>
+                    <a href="#base">Base</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#custom">Custom</a>
+                    <a href="#support">Support</a>
+                    <a href="#tools">Tools</a>
+                  </div>
+                </div>
+                <div class="dark-mode d-none d-sm-flex">
+                    <button>
+                        <i class="fas fa-moon">
+                        </i>
+                        <i class="fas fa-toggle-off toggle"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Main body -->
+    <main>
+
+        <section>
+            <div id="catalogue">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-3" id="filter-section">
+                          <h3 class="text-center pt-4 pb-2">Filters</h3>
+
+                          <!-- Accordion -->
+                          <div class="accordion text-start" id="accordionPanelsStayOpenExample">
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse1" aria-expanded="true" aria-controls="panelsStayOpen-collapse1">
+                                  Filter #1
+                                </button>
+                              </h2>
+                              <div id="panelsStayOpen-collapse1" class="accordion-collapse collapse show">
+                                <div class="accordion-body pb-0">
+                                  <form class="mb-0">
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something">
+                                      <label class="form-check-label" for="check1">Option 1</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">
+                                      <label class="form-check-label" for="check2">Option 2</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check3" name="option3" value="something">
+                                      <label class="form-check-label" for="check3">Option 3</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check4" name="option4" value="something">
+                                      <label class="form-check-label" for="check4">Option 4</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check5" name="option5" value="something">
+                                      <label class="form-check-label" for="check5">Option 5</label>
+                                    </div>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse2" aria-expanded="false" aria-controls="panelsStayOpen-collapse2">
+                                  Filter #2
+                                </button>
+                              </h2>
+                              <div id="panelsStayOpen-collapse2" class="accordion-collapse collapse show">
+                                <div class="accordion-body pb-0">
+                                  <form class="mb-0">
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something">
+                                      <label class="form-check-label" for="check1">Option 1</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">
+                                      <label class="form-check-label" for="check2">Option 2</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check3" name="option3" value="something">
+                                      <label class="form-check-label" for="check3">Option 3</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check4" name="option4" value="something">
+                                      <label class="form-check-label" for="check4">Option 4</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check5" name="option5" value="something">
+                                      <label class="form-check-label" for="check5">Option 5</label>
+                                    </div>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse3" aria-expanded="false" aria-controls="panelsStayOpen-collapse3">
+                                  Filter #3
+                                </button>
+                              </h2>
+                              <div id="panelsStayOpen-collapse3" class="accordion-collapse collapse show">
+                                <div class="accordion-body pb-0">
+                                  <form class="mb-0">
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something">
+                                      <label class="form-check-label" for="check1">Option 1</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">
+                                      <label class="form-check-label" for="check2">Option 2</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check3" name="option3" value="something">
+                                      <label class="form-check-label" for="check3">Option 3</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check4" name="option4" value="something">
+                                      <label class="form-check-label" for="check4">Option 4</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check5" name="option5" value="something">
+                                      <label class="form-check-label" for="check5">Option 5</label>
+                                    </div>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse4" aria-expanded="false" aria-controls="panelsStayOpen-collapse4">
+                                  Filter #4
+                                </button>
+                              </h2>
+                              <div id="panelsStayOpen-collapse4" class="accordion-collapse collapse show">
+                                <div class="accordion-body pb-0">
+                                  <form class="mb-0">
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something">
+                                      <label class="form-check-label" for="check1">Option 1</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">
+                                      <label class="form-check-label" for="check2">Option 2</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check3" name="option3" value="something">
+                                      <label class="form-check-label" for="check3">Option 3</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check4" name="option4" value="something">
+                                      <label class="form-check-label" for="check4">Option 4</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check5" name="option5" value="something">
+                                      <label class="form-check-label" for="check5">Option 5</label>
+                                    </div>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse5" aria-expanded="false" aria-controls="panelsStayOpen-collapse5">
+                                  Filter #5
+                                </button>
+                              </h2>
+                              <div id="panelsStayOpen-collapse5" class="accordion-collapse collapse show">
+                                <div class="accordion-body pb-0">
+                                  <form class="mb-0">
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something">
+                                      <label class="form-check-label" for="check1">Option 1</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">
+                                      <label class="form-check-label" for="check2">Option 2</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check3" name="option3" value="something">
+                                      <label class="form-check-label" for="check3">Option 3</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check4" name="option4" value="something">
+                                      <label class="form-check-label" for="check4">Option 4</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check5" name="option5" value="something">
+                                      <label class="form-check-label" for="check5">Option 5</label>
+                                    </div>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse6" aria-expanded="false" aria-controls="panelsStayOpen-collapse6">
+                                  Filter #6
+                                </button>
+                              </h2>
+                              <div id="panelsStayOpen-collapse6" class="accordion-collapse collapse show">
+                                <div class="accordion-body pb-0">
+                                  <form class="mb-0">
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something">
+                                      <label class="form-check-label" for="check1">Option 1</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">
+                                      <label class="form-check-label" for="check2">Option 2</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check3" name="option3" value="something">
+                                      <label class="form-check-label" for="check3">Option 3</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check4" name="option4" value="something">
+                                      <label class="form-check-label" for="check4">Option 4</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input type="checkbox" class="form-check-input" id="check5" name="option5" value="something">
+                                      <label class="form-check-label" for="check5">Option 5</label>
+                                    </div>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-8" id="products">
+                          <div class="product">
+                            <div class="container">
+                              <h3>Products</h3>
+                              <div class="row justify-content-around">
+                                <div class="col-3 item px-1 py-2 my-3">
+                                  <div>
+                                    <a href="#"><img src="../assets/images/feature-shipping.svg" alt="product1" class="img-fluid"></a>
+                                    <div class="text-center">
+                                      <p class="pt-3">Name</p>
+                                      <button type="submit" class="btn px-4 my-2">Details</button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-3 item px-1 py-2 my-3">
+                                  <div>
+                                    <a href="#"><img src="../assets/images/feature-shipping.svg" alt="product1" class="img-fluid"></a>
+                                    <div class="text-center">
+                                      <p class="pt-3">Name</p>
+                                      <button type="submit" class="btn px-4 my-2">Details</button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-3 item px-1 py-2 my-3">
+                                  <div>
+                                    <a href="#"><img src="../assets/images/feature-shipping.svg" alt="product1" class="img-fluid"></a>
+                                    <div class="text-center">
+                                      <p class="pt-3">Name</p>
+                                      <button type="submit" class="btn px-4 my-2">Details</button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-3 item px-1 py-2 my-3">
+                                  <div>
+                                    <a href="#"><img src="../assets/images/feature-shipping.svg" alt="product1" class="img-fluid"></a>
+                                    <div class="text-center">
+                                      <p class="pt-3">Name</p>
+                                      <button type="submit" class="btn px-4 my-2">Details</button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-3 item px-1 py-2 my-3">
+                                  <div>
+                                    <a href="#"><img src="../assets/images/feature-shipping.svg" alt="product1" class="img-fluid"></a>
+                                    <div class="text-center">
+                                      <p class="pt-3">Name</p>
+                                      <button type="submit" class="btn px-4 my-2">Details</button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-3 item px-1 py-2 my-3">
+                                  <div>
+                                    <a href="#"><img src="../assets/images/feature-shipping.svg" alt="product1" class="img-fluid"></a>
+                                    <div class="text-center">
+                                      <p class="pt-3">Name</p>
+                                      <button type="submit" class="btn px-4 my-2">Details</button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-3 item px-1 py-2 my-3">
+                                  <div>
+                                    <a href="#"><img src="../assets/images/feature-shipping.svg" alt="product1" class="img-fluid"></a>
+                                    <div class="text-center">
+                                      <p class="pt-3">Name</p>
+                                      <button type="submit" class="btn px-4 my-2">Details</button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-3 item px-1 py-2 my-3">
+                                  <div>
+                                    <a href="#"><img src="../assets/images/feature-shipping.svg" alt="product1" class="img-fluid"></a>
+                                    <div class="text-center">
+                                      <p class="pt-3">Name</p>
+                                      <button type="submit" class="btn px-4 my-2">Details</button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-3 item px-1 py-2 my-3">
+                                  <div>
+                                    <a href="#"><img src="../assets/images/feature-shipping.svg" alt="product1" class="img-fluid"></a>
+                                    <div class="text-center">
+                                      <p class="pt-3">Name</p>
+                                      <button type="submit" class="btn px-4 my-2">Details</button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-3 item px-1 py-2 my-3">
+                                  <div>
+                                    <a href="#"><img src="../assets/images/feature-shipping.svg" alt="product1" class="img-fluid"></a>
+                                    <div class="text-center">
+                                      <p class="pt-3">Name</p>
+                                      <button type="submit" class="btn px-4 my-2">Details</button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-3 item px-1 py-2 my-3">
+                                  <div>
+                                    <a href="#"><img src="../assets/images/feature-shipping.svg" alt="product1" class="img-fluid"></a>
+                                    <div class="text-center">
+                                      <p class="pt-3">Name</p>
+                                      <button type="submit" class="btn px-4 my-2">Details</button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-3 item px-1 py-2 my-3">
+                                  <div>
+                                    <a href="#"><img src="../assets/images/feature-shipping.svg" alt="product1" class="img-fluid"></a>
+                                    <div class="text-center">
+                                      <p class="pt-3">Name</p>
+                                      <button type="submit" class="btn px-4 my-2">Details</button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-3 item px-1 py-2 my-3">
+                                  <div>
+                                    <a href="#"><img src="../assets/images/feature-shipping.svg" alt="product1" class="img-fluid"></a>
+                                    <div class="text-center">
+                                      <p class="pt-3">Name</p>
+                                      <button type="submit" class="btn px-4 my-2">Details</button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-3 item px-1 py-2 my-3">
+                                  <div>
+                                    <a href="#"><img src="../assets/images/feature-shipping.svg" alt="product1" class="img-fluid"></a>
+                                    <div class="text-center">
+                                      <p class="pt-3">Name</p>
+                                      <button type="submit" class="btn px-4 my-2">Details</button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-3 item px-1 py-2 my-3">
+                                  <div>
+                                    <a href="#"><img src="../assets/images/feature-shipping.svg" alt="product1" class="img-fluid"></a>
+                                    <div class="text-center">
+                                      <p class="pt-3">Name</p>
+                                      <button type="submit" class="btn px-4 my-2">Details</button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-3 item px-1 py-2 my-3">
+                                  <div>
+                                    <a href="#"><img src="../assets/images/feature-shipping.svg" alt="product1" class="img-fluid"></a>
+                                    <div class="text-center">
+                                      <p class="pt-3">Name</p>
+                                      <button type="submit" class="btn px-4 my-2">Details</button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-3 item px-1 py-2 my-3">
+                                  <div>
+                                    <a href="#"><img src="../assets/images/feature-shipping.svg" alt="product1" class="img-fluid"></a>
+                                    <div class="text-center">
+                                      <p class="pt-3">Name</p>
+                                      <button type="submit" class="btn px-4 my-2">Details</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="py-4 footer">
+        <div class="container-fluid">
+          <div class="footer-row text-start justify-content-between">
+    
+            <div class="footer-col-1">
+              <h3 class="py-2">SmartSwipe</h3>
+              <ul class="list-unstyled">
+                <li class="my-3">
+                  <a href="index.html" class="text-decoration-none text-center">
+                    <i class="arrow text-start fas fa-chevron-right"></i> Home
+                  </a>
+                </li>
+                <li class="my-3">
+                  <a href="brands.html" class="text-decoration-none text-center">
+                    <i class="arrow text-start fas fa-chevron-right"></i> All Brands
+                  </a>
+                </li>
+                <li class="my-3">
+                  <a href="contact.html" target="_blank" class="text-decoration-none text-center">
+                    <i class="arrow text-start fas fa-chevron-right"></i> Get in Touch
+                  </a>
+                </li>
+                <li class="my-3">
+                  <a href="about.html" target="_blank" class="text-decoration-none text-center">
+                    <i class="arrow text-start fas fa-chevron-right"></i> About Us
+                  </a>
+                </li>
+                <li class="my-3">
+                  <a href="#" class="text-decoration-none text-center">
+                    <i class="arrow text-start fas fa-chevron-right"></i> Terms & Conditions
+                  </a>
+                </li>
+                <li class="my-3">
+                  <a href="#" class="text-decoration-none text-center">
+                    <i class="arrow text-start fas fa-chevron-right"></i> Privacy Policy
+                  </a>
+                </li>
+                <li class="my-3">
+                  <a href="#" class="text-decoration-none text-center">
+                    <i class="arrow text-start fas fa-chevron-right"></i> Our Blogs
+                  </a>
+                </li>
+              </ul>
+            </div>
+    
+            <div class="footer-col-2">
+              <h3 class="mb-3 ps-3 py-2">Contact Us</h3>
+              <div class="d-flex justify-content-start align-items-start my-2">
+                <span class="me-3">
+                  <i class="fas fa-map-marked-alt"></i>
+                </span>
+                <span class="fw-light">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit, repellendus!
+                </span>
+              </div>
+              <div class="d-flex justify-content-start align-items-start my-2">
+                <span class="me-3">
+                  <i class="fas fa-envelope"></i>
+                </span>
+                <span class="fw-light">
+                  smartswipe.support@gmail.com
+                </span>
+              </div>
+              <div class="d-flex justify-content-start align-items-start my-2">
+                <span class="me-3">
+                  <i class="fas fa-phone-alt"></i>
+                </span>
+                <span class="fw-light">
+                  +92300 4912613
+                </span>
+              </div>
+              <h3 class="mb-3 py-3 ps-3">Follow Us</h3>
+              <div class="footer-col-3">
+                <ul class="list-unstyled d-flex justify-content-around">
+                  <li>
+                    <a href="https://www.facebook.com/" target="_blank" class="text-white text-decoration-none fs-4 ms-4 me-4">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/" target="_blank" class="text-white text-decoration-none fs-4 me-4">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://twitter.com/" target="_blank" class="text-white text-decoration-none fs-4 me-4">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.youtube.com/" target="_blank" class="text-white text-decoration-none fs-4 me-4">
+                      <i class="fab fa-youtube"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="footer-col-4">
+              <h3 class="mb-3 py-2 ps-4">Payment Methods</h3>
+              <div class="m-3">
+                <ul class="d-flex justify-content-around list-unstyled">
+                  <li>
+                    <img src="/assets/images/payment-methods/paypal.JPG" alt="" class="img-fluid">
+                  </li>
+                  <li>
+                    <img src="/assets/images/payment-methods/skrill.JPG" alt="" class="img-fluid">
+                  </li>
+                  <li>
+                    <img src="/assets/images/payment-methods/visa.JPG" alt="" class="img-fluid">
+                  </li>
+                </ul>
+                <ul class="d-flex list-unstyled justify-content-around">
+                  <li>
+                    <img src="/assets/images/payment-methods/applepay.JPG" alt="" class="img-fluid">
+                  </li>
+                  <li>
+                    <img src="/assets/images/payment-methods/googlepay.JPG" alt="" class="img-fluid">
+                  </li>
+                  <li>
+                    <img src="/assets/images/payment-methods/mastercard.JPG" alt="" class="img-fluid">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    <div class="copyright">
+        Copyright © 2024  SmartSwipe.store
+    </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+    <!-- Owl Carousel Js file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
+
+    <!--  isotope plugin cdn  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"
+        integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap -->
+    <script src="/assets/bootstrap-5.3.2/js/bootstrap.js"></script>
+
+    <!-- Custom Js -->
+    <script src="/assets/main.js"></script>
+</body>
+
+</html>

@@ -32,19 +32,28 @@
                 <div class="logo">
                     <a href="#">SMARTSWIPE</a>
                 </div>
-                <div class="search-bar" action="#">
+                <div class="search-bar d-none d-sm-flex" action="#">
                     <input type="search" placeholder="Search..." aria-label="Search">
                     <button type="submit"><i class="fas fa-search"></i></button>
                 </div>
                 <div class="dropdown">
-                    <button>
-                        <i class="fas fa-user"></i>
+                    <button onclick="dropDown()" class="dropbtn">
+                        <i class="fas fa-user d-none d-md-inline"></i>
                         <span>
                             <i class="fas fa-chevron-down"></i>
                         </span>
                     </button>
+                    <div id="myDropdown" class="dropdown-content">
+                      <a href="#about">About</a>
+                      <a href="#base">Base</a>
+                      <a href="#blog">Blog</a>
+                      <a href="#contact">Contact</a>
+                      <a href="#custom">Custom</a>
+                      <a href="#support">Support</a>
+                      <a href="#tools">Tools</a>
+                    </div>
                 </div>
-                <div class="dark-mode">
+                <div class="dark-mode d-none d-sm-flex">
                     <button>
                         <i class="fas fa-moon">
                         </i>
@@ -104,37 +113,37 @@
                 <!-- owl carousel -->
                 <div class="owl-carousel owl-theme">
                     <div class="item">
-                        <button type="submit" class="btn category-btn">Category</button>
+                        <button onclick="document.location = 'catalogue.html'" class="btn category-btn">Category</button>
                     </div>
                     <div class="item">
-                        <button type="submit" class="btn category-btn">Category</button>
+                        <button onclick="document.location = 'catalogue.html'" class="btn category-btn">Category</button>
                     </div>
                     <div class="item">
-                        <button type="submit" class="btn category-btn">Category</button>
+                        <button onclick="document.location = 'catalogue.html'" class="btn category-btn">Category</button>
                     </div>
                     <div class="item">
-                        <button type="submit" class="btn category-btn">Category</button>
+                        <button onclick="document.location = 'catalogue.html'" class="btn category-btn">Category</button>
                     </div>
                     <div class="item">
-                        <button type="submit" class="btn category-btn">Category</button>
+                        <button onclick="document.location = 'catalogue.html'" class="btn category-btn">Category</button>
                     </div>
                     <div class="item">
-                        <button type="submit" class="btn category-btn">Category</button>
+                        <button onclick="document.location = 'catalogue.html'" class="btn category-btn">Category</button>
                     </div>
                     <div class="item">
-                        <button type="submit" class="btn category-btn">Category</button>
+                        <button onclick="document.location = 'catalogue.html'" class="btn category-btn">Category</button>
                     </div>
                     <div class="item">
-                        <button type="submit" class="btn category-btn">Category</button>
+                        <button onclick="document.location = 'catalogue.html'" class="btn category-btn">Category</button>
                     </div>
                     <div class="item">
-                        <button type="submit" class="btn category-btn">Category</button>
+                        <button onclick="document.location = 'catalogue.html'" class="btn category-btn">Category</button>
                     </div>
                     <div class="item">
-                        <button type="submit" class="btn category-btn">Category</button>
+                        <button onclick="document.location = 'catalogue.html'" class="btn category-btn">Category</button>
                     </div>
                     <div class="item">
-                        <button type="submit" class="btn category-btn">Category</button>
+                        <button onclick="document.location = 'catalogue.html'" class="btn category-btn">Category</button>
                     </div>
                 </div>
                 <!-- !owl carousel -->
@@ -352,7 +361,7 @@
           <div class="container">
             <div class="d-flex justify-content-center">
               <h3 class="mb-5">Products-1</h3>
-              <button type="submit" class="btn veiw-btn">Veiw All <i class="fas fa-arrow-right"></i></button>
+              <button onclick="document.location = 'catalogue.html'" class="btn veiw-btn">Veiw All <i class="fas fa-arrow-right"></i></button>
             </div>
               <!-- owl carousel -->
               <div class="owl-carousel owl-theme">
@@ -421,7 +430,7 @@
           <div class="container">
             <div class="d-flex justify-content-center">
               <h3 class="mb-5">Products-2</h3>
-              <button type="submit" class="btn veiw-btn">Veiw All <i class="fas fa-arrow-right"></i></button>
+              <button onclick="document.location = 'catalogue.html'" class="btn veiw-btn">Veiw All <i class="fas fa-arrow-right"></i></button>
             </div>
               <!-- owl carousel -->
               <div class="owl-carousel owl-theme">
@@ -490,7 +499,7 @@
           <div class="container">
             <div class="d-flex justify-content-center">
               <h3 class="mb-5">Products-3</h3>
-              <button type="submit" class="btn veiw-btn">Veiw All <i class="fas fa-arrow-right"></i></button>
+              <button onclick="document.location = 'catalogue.html'" class="btn veiw-btn">Veiw All <i class="fas fa-arrow-right"></i></button>
             </div>
               <!-- owl carousel -->
               <div class="owl-carousel owl-theme">
@@ -555,6 +564,56 @@
         </section>
 
 
+        <!-- Blogs -->
+        <section class="blogs">
+          <div class="container pt-5">
+            <h2>Our Blogs</h2>
+            <div class="row d-flex blog">
+              <div class="col-5">
+                <a href="#">
+                  <img src="/assets/images/feature-shipping.svg" alt="blog" class="img-fluid">
+                </a>
+              </div>
+              <div class="col-5 px-4 py-3 blog-body">
+                <div>
+                  <h3 class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                  <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente praesentium inventore asperiores eveniet, dolorem ut? Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis magnam, voluptatem animi necessitatibus temporibus architecto quibusdam quasi earum dolorem quos nobis cum facere. Perspiciatis debitis assumenda maxime vitae recusandae voluptatum...</p>
+                </div>
+                <button class="btn" type="submit">Details</button>
+              </div>
+            <div class="row d-flex blog">
+              <div class="col-5">
+                <a href="#">
+                  <img src="/assets/images/feature-shipping.svg" alt="blog" class="img-fluid">
+                </a>
+              </div>
+              <div class="col-5 px-4 py-3 blog-body">
+                <div>
+                  <h3 class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                  <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente praesentium inventore asperiores eveniet, dolorem ut? Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis magnam, voluptatem animi necessitatibus temporibus architecto quibusdam quasi earum dolorem quos nobis cum facere. Perspiciatis debitis assumenda maxime vitae recusandae voluptatum...</p>
+                </div>
+                <button class="btn" type="submit">Details</button>
+              </div>
+            <div class="row d-flex blog">
+              <div class="col-5">
+                <a href="#">
+                  <img src="/assets/images/feature-shipping.svg" alt="blog" class="img-fluid">
+                </a>
+              </div>
+              <div class="col-5 px-4 py-3 blog-body">
+                <div>
+                  <h3 class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+                  <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente praesentium inventore asperiores eveniet, dolorem ut? Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis magnam, voluptatem animi necessitatibus temporibus architecto quibusdam quasi earum dolorem quos nobis cum facere. Perspiciatis debitis assumenda maxime vitae recusandae voluptatum...</p>
+                </div>
+                <button class="btn" type="submit">Details</button>
+              </div>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn veiw-btn">Read More <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+
+        </section>
 
 
 

@@ -13,18 +13,18 @@ $(document).ready(function(){
         dots: false,
         responsive : {
             0: {
+                items: 3
+            },
+            600: {
                 items: 4
             },
-            300: {
+            800: {
                 items: 5
             },
-            650: {
-                items: 6
-            },
-            800: {
+            1000: {
                 items: 7
             },
-            1000 : {
+            1200 : {
                 items: 8
             }
         }
@@ -37,12 +37,15 @@ $(document).ready(function(){
         dots: false,
         responsive : {
             0: {
-                items: 1
+                items: 3
             },
             600: {
                 items: 3
             },
-            1000 : {
+            1000: {
+                items: 4
+            },
+            1220 : {
                 items: 5
             }
         }
@@ -55,12 +58,18 @@ $(document).ready(function(){
         dots: false,
         responsive : {
             0: {
-                items: 5
+                items: 6
             },
             600: {
+                items: 7
+            },
+            800: {
                 items: 8
             },
-            1000 : {
+            1050 : {
+                items: 9
+            },
+            1250 : {
                 items: 10
             }
         }
@@ -103,5 +112,22 @@ $(document).ready(function(){
             });
         }
     });
+
+
     
 });
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function dropDown() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+    if (!e.target.matches('.dropbtn')) {
+        var myDropdown = document.getElementById("myDropdown");
+        if (myDropdown.classList.contains('show')) {
+            myDropdown.classList.remove('show');
+        }
+    }
+}

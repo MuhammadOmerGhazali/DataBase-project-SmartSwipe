@@ -3,6 +3,7 @@ const mysql = require('mysql');
 const express = require('express');
 const bodyParser = require('body-parser');
 const productRoutes = require('./routes/products');
+const categoryRoutes = require('./routes/categories');
 const app = express();
 
 
@@ -13,6 +14,9 @@ app.use(bodyParser.urlencoded({ extended:false}));
 
 //Converting body to json format
 app.use(bodyParser.json());
+
+
+
 
 //Error handling for invalid json data
 app.use((err, req, res, next) => {
@@ -27,6 +31,8 @@ app.use((err, req, res, next) => {
 
 
 app.use('/api/products',productRoutes);
+app.use('/api/categories',categoryRoutes);
+
 
 //listening to port
 app.listen(process.env.PORT,() =>{

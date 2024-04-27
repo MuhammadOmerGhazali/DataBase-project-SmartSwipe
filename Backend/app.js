@@ -2,7 +2,7 @@ require('dotenv').config();
 const mysql = require('mysql');
 const express = require('express');
 const bodyParser = require('body-parser');
-
+const productRoutes = require('./routes/products');
 const app = express();
 
 
@@ -15,6 +15,7 @@ app.use((req, res, next) => {
     next();
 })
 
+app.use('/api/products',productRoutes);
 
 //listening to port
 app.listen(process.env.PORT,() =>{

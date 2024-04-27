@@ -26,6 +26,27 @@ router.get('/:id', (req, res) => {
 });
 
 
+//Get all Orders
+router.get('/', (req, res) => {
+    pool.getConnection((err, connetion) => {
+        if (err){
+            connetion.release();
+            return res.status(500).send('Internal Server Error');
+        }
+        connetion.query('Select * from orders', (err, orders) => {
+            connetion.release();
+
+            if (!err) {
+                res.send(orders)
+            }
+            else {
+                return res.status(500).send(err.message);
+            }
+        })
+
+    })
+});
+
 
 
 

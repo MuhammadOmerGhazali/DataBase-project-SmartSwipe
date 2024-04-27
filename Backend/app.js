@@ -7,6 +7,7 @@ const categoryRoutes = require('./routes/categories');
 const paymentMethodRoutes = require('./routes/paymentMethods');
 const customerCartRoutes = require('./routes/customerCart');
 const faqsRoutes = require('./routes/faqs');
+const ordersRoutes = require('./routes/orders');
 const app = express();
 
 
@@ -38,6 +39,8 @@ app.use('/api/categories',categoryRoutes);
 app.use('/api/paymentmethods',paymentMethodRoutes);
 app.use('/api/customerCart',customerCartRoutes);
 app.use('/api/faqs',faqsRoutes);
+app.use('/api/orders',ordersRoutes);
+
 
 
 

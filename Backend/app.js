@@ -6,6 +6,7 @@ const productRoutes = require('./routes/products');
 const categoryRoutes = require('./routes/categories');
 const paymentMethodRoutes = require('./routes/paymentMethods');
 const customerCartRoutes = require('./routes/customerCart');
+const faqsRoutes = require('./routes/faqs');
 const app = express();
 
 
@@ -31,11 +32,13 @@ app.use((err, req, res, next) => {
 
 
 
-
+//Middleware for hadling API calls
 app.use('/api/products',productRoutes);
 app.use('/api/categories',categoryRoutes);
 app.use('/api/paymentmethods',paymentMethodRoutes);
 app.use('/api/customerCart',customerCartRoutes);
+app.use('/api/faqs',faqsRoutes);
+
 
 
 

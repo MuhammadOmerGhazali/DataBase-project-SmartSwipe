@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
+    <title>Categories</title>
     <link rel="stylesheet" href="/Frontend/css/admin.css">
-    <link rel="stylesheet" href="/Frontend/css/productsCRUD.css">
 </head>
 
 <body>
@@ -60,23 +59,8 @@
 
         <form id="addProduct">
             <!-- Form to add a new product -->
-            <input type="text" name="ProductID" id="productID" placeholder="ProductID" required>
-            <input type="text" name="Title" id="title" placeholder="Title" required>
-            <select name="Category" id="category" required>
-                <option value="" disabled selected>Select a category</option>
-                <option value="1">1</option>
-                <option value="Category 2">Category 2</option>
-                <option value="Category 3">Category 3</option>
-                <!-- Add more options as needed -->
-            </select>
-
-            <input type="number" name="Price" id="price" placeholder="Price" required>
-            <input type="number" name="Stock" id="stock" placeholder="Stock" required>
-            <textarea name="Description" id="description" placeholder="Description" required></textarea>
-            <input type="number" name="DiscountedPrice" id="discountedPrice" placeholder="Discounted Price" required>
-            <input type="text" name="ProductImage" id="productImage" placeholder="Product Image" required>
-
-            <button type="submit" id="Submit">Add Product</button>
+            <input type="text" name="Category" id="category" placeholder="Category" required>
+            <button type="submit" id="Submit">Add Category</button>
         </form>
 
 

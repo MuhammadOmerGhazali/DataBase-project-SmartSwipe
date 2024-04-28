@@ -4,6 +4,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const productRoutes = require('./routes/products');
 const categoryRoutes = require('./routes/categories');
+const paymentMethodRoutes = require('./routes/paymentMethods');
+const customerCartRoutes = require('./routes/customerCart');
+const faqsRoutes = require('./routes/faqs');
+const ordersRoutes = require('./routes/orders');
+const OrderedproductsRoutes = require('./routes/orderedProducts');
+const paymentsRoutes = require('./routes/payments');
+const reviewRoutes = require('./routes/reviews');
+const uaqsRoutes = require('./routes/uaqs');
 const app = express();
 
 
@@ -29,9 +37,24 @@ app.use((err, req, res, next) => {
 
 
 
-
+//Middleware for hadling API calls
 app.use('/api/products',productRoutes);
 app.use('/api/categories',categoryRoutes);
+app.use('/api/paymentmethods',paymentMethodRoutes);
+app.use('/api/customerCart',customerCartRoutes);
+app.use('/api/faqs',faqsRoutes);
+app.use('/api/orders',ordersRoutes);
+app.use('/api/orderedproducts',OrderedproductsRoutes);
+app.use('/api/payments',paymentsRoutes);
+app.use('/api/reviews',reviewRoutes);
+app.use('/api/uaqs',uaqsRoutes);
+
+
+
+
+
+
+
 
 
 //listening to port

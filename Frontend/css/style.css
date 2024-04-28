@@ -38,7 +38,119 @@ html {
   color: #fff;
 }
 
-/* Contact Stylles */
+/* Cart Styles */
+#cart .table {
+  width: 100px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  white-space: nowrap;
+}
+
+#cart table img{
+  width: 70px;
+}
+#cart {
+  margin: 30px;
+}
+
+#cart .table:nth-child(1){
+  width: 100px;
+  text-align: center;
+}
+
+#cart .table:nth-child(2){
+  width: 150px;
+  text-align: center;
+}
+
+#cart .table:nth-child(3){
+  width: 250px;
+  text-align: center;
+}
+
+#cart .table:nth-child(4),
+#cart .table:nth-child(5),
+#cart .table:nth-child(6){
+  width: 150px;
+  text-align: center;
+}
+
+#cart .table:nth-child(5){
+  width: 70px;
+  padding: 10px 5px 0 15px;
+}
+#cart .table thead{
+  border: 1px solid #e2e9e1;
+  border-left: none;
+  border-right: none;
+}
+#cart .table thead td{
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+  padding: 18px 0;
+}
+
+#cart .table tbody tr td{
+  padding: 15px;
+}
+
+#cart .table tbody td{
+  font-size: 13px;
+}
+
+#cart-add{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#cart-add .coupon{
+width: 50%;
+margin-bottom: 30px;
+}
+
+#cart-add .coupon h3,
+#SubTotal h3{
+  margin-left: 30px;
+  padding-bottom: 15px;
+}
+
+#cart-add .coupon  input{
+  margin-left: 30px;
+  padding: 10px 20px;
+  outline: none;
+  width: 60%;
+  margin-right: 10px;
+  border: 1px solid #e2e9e1;
+}
+
+#cart-add .coupon  button,
+#SubTotal button{
+  background-color: #088178;  padding: 10px 20px;
+  color: #fff;
+}
+
+#SubTotal {
+  width: 50%;
+  margin-bottom: 30px;
+  border: 1px solid #e2e9e1;
+  padding: 30px;
+}
+
+#SubTotal table{
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#SubTotal table td{
+  width: 50%;
+  border: 1px solid #e2e9e1;
+  padding: 10px;
+  font-size: 13px;
+}
+
 #contact-details {
 display: flex;
 align-items: center;

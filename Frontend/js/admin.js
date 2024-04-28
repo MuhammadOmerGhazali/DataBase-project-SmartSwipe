@@ -32,8 +32,8 @@ const renderProducts = (products) => {
                 <td>${product.DiscountedPrice}</td>
                 <td>${product.ProductImage}</td>
                 <td>
-                <div id="update-product">Update</div>
-                <div id="delete-product">Delete</div>
+                <button id="update-product">Update</button>
+                <button id="delete-product">Delete</button>
                 </td>
             </tr>
         `;
@@ -71,14 +71,7 @@ addProductForm.addEventListener('submit', (e) => {
 
 
     //
-    const updatedProductID = document.querySelector('#uproductID').value;
-    const updatedTitle = document.querySelector('#utitle').value;
-    const updatedCategory = document.querySelector('#ucategory').value;
-    const updatedPrice = document.querySelector('#uprice').value;
-    const updatedStock = document.querySelector('#ustock').value;
-    const updatedDescription = document.querySelector('#udescription').value;
-    const updatedDiscountedPrice = document.querySelector('#udiscountedPrice').value;
-    const updatedProductImage = document.querySelector('#uproductImage').value;
+    
 
     // Make the POST request with form data
     fetch(productsUrl, {
@@ -133,7 +126,7 @@ productsBody.addEventListener('click', (e) => {
     }
 
     if (e.target.id === 'update-product') {
-        e.preventDefault();
+        
         let id = e.target.parentElement.parentElement.dataset.id;
         fetch(`${productsUrl}/${id}`)
         .then(res => res.json())
@@ -153,7 +146,7 @@ productsBody.addEventListener('click', (e) => {
     }
 });
 
-// Add event listener for the update form submission
+
 // Add event listener for the update form submission
 const updateProductForm = document.querySelector('#updateProduct');
 updateProductForm.addEventListener('submit', (e) => {
@@ -198,4 +191,7 @@ updateProductForm.addEventListener('submit', (e) => {
         // Handle errors if necessary
     });
 });
+
+
+
 

@@ -283,3 +283,28 @@ textarea {
     background-color: #fff;
     color: #333;
 }
+
+#update-product, #delete-product {
+    width: 100px; /* Adjust the width as needed */
+    padding: 10px; /* Add padding for better appearance */
+    margin-right: 10px; /* Add margin to separate buttons */
+    margin-top: 5px;
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    cursor: pointer; /* Show pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+#delete-product{
+    background-color: red;
+}
+
+#delete-product:hover{
+    background-color: rgb(187, 86, 86);
+}
+
+#update-product:hover {
+    background-color: #45a049; /* Darker green color on hover */
+}

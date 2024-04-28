@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin dashboard</title>
+    <title>Products</title>
     <link rel="stylesheet" href="/Frontend/css/admin.css">
 </head>
 
@@ -51,28 +51,81 @@
 
         </div>
     </section>
-    <div class="dashboard">
-        <form id="productForm" method="POST" action="http://localhost:5000/api/products/">
 
+
+    <div class="dashboard">
+        <button id="addbutton" onclick="toggleForm('addProduct')">Add Products</button>
+        
+
+        <form id="addProduct" action="" method="POST">
+            <!-- Form to add a new product -->
             <input type="text" name="ProductID" id="productID" placeholder="ProductID" required>
             <input type="text" name="Title" id="title" placeholder="Title" required>
-            <input type="text" name="Category" id="category" placeholder="Category" required>
+            <select name="Category" id="category" required>
+                <option value="" disabled selected>Select a category</option>
+                <option value="Category 1">Category 1</option>
+                <option value="Category 2">Category 2</option>
+                <option value="Category 3">Category 3</option>
+                <!-- Add more options as needed -->
+            </select>
+            
             <input type="number" name="Price" id="price" placeholder="Price" required>
-            <input type="number" name="Rating" id="rating" placeholder="Rating" value="0" readonly>
-            <input type="text" name="Type" id="type" placeholder="Type" required>
             <input type="number" name="Stock" id="stock" placeholder="Stock" required>
             <textarea name="Description" id="description" placeholder="Description" required></textarea>
-            <input type="number" name="Sales" id="sales" placeholder="Sales" value="0" readonly required>
             <input type="number" name="DiscountedPrice" id="discountedPrice" placeholder="Discounted Price" required>
             <input type="text" name="ProductImage" id="productImage" placeholder="Product Image" required>
-            <input type="datetime" name="DateAdded" id="dateAdded" placeholder="Date Added" required>
-            <button type="submit">Submit</button>
+            
+            <button type="submit" id="Submit">Add Product</button>
         </form>
 
-    
+        
+
+        <form id="updateProduct" action="" method="POST">
+            <!-- Form to add a new product -->
+            <input type="text" name="ProductID" id="productID" placeholder="ProductID" required>
+            <input type="text" name="Title" id="title" placeholder="Title" required>
+            <select name="Category" id="category" required>
+                <option value="" disabled selected>Select a category</option>
+                <option value="Category 1">Category 1</option>
+                <option value="Category 2">Category 2</option>
+                <option value="Category 3">Category 3</option>
+                <!-- Add more options as needed -->
+            </select>
+            
+            <input type="number" name="Price" id="price" placeholder="Price" required>
+            <input type="number" name="Stock" id="stock" placeholder="Stock" required>
+            <textarea name="Description" id="description" placeholder="Description" required></textarea>
+            <input type="number" name="DiscountedPrice" id="discountedPrice" placeholder="Discounted Price" required>
+            <input type="text" name="ProductImage" id="productImage" placeholder="Product Image" required>
+            
+            <button type="submit" id="Submit">Update</button>
+        </form>
+
+        <div class="allProducts">
+            <!-- Table to display all products -->
+            <table class="products-table">
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Description</th>
+                        <th>Discounted Price</th>
+                        <th>Product Image</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="products-body">
+                    <!-- Products will be added here dynamically -->
+                </tbody>
+            </table>
+        </div>
     </div>
-    <script src="https://kit.fontawesome.com/d6dabd964f.js" crossorigin="anonymous"></script>
-    <script src="/Frontend/js/admin.js"></script> <!-- JavaScript for handling menu toggle -->
+
+    <script src="/Frontend/js/admin.js"></script>
+
 </body>
 
 </html>

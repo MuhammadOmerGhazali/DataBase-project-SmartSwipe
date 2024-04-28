@@ -1,9 +1,8 @@
 body {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 0;
     margin: 0;
-    display: flex;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
 }
 
 #menu-toggle {
@@ -16,160 +15,257 @@ body {
 }
 
 #menu {
-    background-color: #000000;
-    width: 20%;
-    min-height: 100vh;
-    padding: 30px 0 0 30px;
-    min-width: 200px;
-}
-
-.logo img {
-    width: 40px;
+    background-color: #222;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    padding-top: 20px;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 7%;
-    margin-bottom: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.logo h2 {
+    color: #fff;
+    margin-top: 10px;
 }
 
 .items {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2em;
+    padding-left: 20px;
+    list-style: none;
+    margin: 0;
 }
 
 .items li {
-    list-style: none;
-    padding: 0;
+    margin-bottom: 15px;
 }
 
 .items li a {
-    display: block;
-    height: 2.4em;
-    border: 1px solid #162938;
-    padding: 0 15px;
-    line-height: 2.4em;
+    color: #fff;
     text-decoration: none;
     font-size: 18px;
-    color: rgb(255, 254, 254);
+    transition: all 0.3s ease;
 }
 
-.items li:hover a {
-    background-color: #2b516e;
-    color: #fff;
+.items li a:hover {
+    color: #00bcd4;
 }
 
-.dashboard {
-    flex: 1;
-    min-height: 100vh;
-    background-color: rgb(205, 211, 211);
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-}
 
 .stats-container {
     display: flex;
     flex-wrap: wrap;
-    height: 230px;
-    justify-content: center;
-    gap: 0;
-    margin: 20px;
+    gap: 20px;
 }
 
 .stats {
     flex: 1;
     min-width: 200px;
-    max-width: 230px;
-    height: 150px;
     background-color: #fff;
-    border: 1px solid #000;
-    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+.dashboard {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.stats h3 {
+    margin-top: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.stats p {
+    margin-bottom: 0;
+    font-size: 18px;
+    color: #666;
+}
+
+.stats:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 #logout {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    background-color: #f44336;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+    transition: all 0.3s ease;
 }
 
 #logout:hover {
-    background-color: red;
+    background-color: #d32f2f;
 }
-
-.logo h2 {
-    color: white;
-}
-
-.stats{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-}
-
-@media screen and (max-width: 768px) {
-    #menu {
-        width: 30%;
-    }
-}
-
-
-
-
-#dateAdded{
-    margin-bottom: 10px;
-}
-
-
-
 
 
 
 /* Form styling */
-.dashboard {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
 
-#productForm {
-    width: 300px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
 
-#productForm input[type="text"],
-#productForm input[type="number"],
-#productForm textarea,
-#productForm button {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-sizing: border-box;
-    font-size: 16px;
-}
 
-#productForm textarea {
-    height: 80px;
-    resize: vertical;
-}
 
-#productForm button {
+
+
+
+#addbutton {
+    width: 150px; /* Adjust width as needed */
+    margin: 20px auto; /* Center the button horizontally */
     background-color: #4caf50;
     color: white;
     cursor: pointer;
+    border: none;
+    padding: 15px;
+    border-radius: 3px;
+    font-size: 16px;
+    transition: background-color 0.3s;
 }
 
-#productForm button:hover {
+#addbutton:hover {
     background-color: #45a049;
+}
+
+
+
+/* Table styling */
+.products-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.products-table th, .products-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.products-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.products-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.products-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.products-table td img {
+    max-width: 80px;
+    max-height: 80px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Button styling */
+.delete-button, .update-button {
+    padding: 8px 12px;
+    cursor: pointer;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover, .update-button:hover {
+    background-color: #c82333;
+}
+
+.update-button {
+    background-color: #007bff;
+}
+
+.update-button:hover {
+    background-color: #0056b3;
+}
+
+
+#addProduct{
+    display: none;
+    margin-bottom: 30px;
+}
+
+
+#updateProduct{
+    display: none;
+}
+
+/* Input fields */
+#productID,
+#title,
+#category,
+#price,
+#stock,
+#discountedPrice,
+#productImage,
+#description {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+/* Submit button */
+#Submit {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#Submit:hover {
+    background-color: #45a049;
+}
+
+
+/* Style the select box */
+#category {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    appearance: none; /* Hide default arrow icon */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%231e75e5" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'); /* Add custom arrow icon */
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 24px 24px;
+    -webkit-appearance: none; /* For Safari */
+    -moz-appearance: none; /* For Firefox */
+}
+
+/* Style the options */
+#category option {
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
 }

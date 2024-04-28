@@ -1,4 +1,5 @@
 require('dotenv').config();
+const cors= require('cors');
 const mysql = require('mysql');
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -14,6 +15,7 @@ const reviewRoutes = require('./routes/reviews');
 const uaqsRoutes = require('./routes/uaqs');
 const app = express();
 
+app.use(cors());
 
 app.use((req, res, next) => {
     console.log('Requested:', req.method, req.originalUrl);
@@ -25,6 +27,8 @@ app.use(bodyParser.urlencoded({ extended:false}));
 
 //Converting body to json format
 app.use(bodyParser.json());
+
+
 
 
 

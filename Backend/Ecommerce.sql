@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2024 at 12:34 PM
+-- Generation Time: Apr 28, 2024 at 09:04 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -199,23 +199,23 @@ CREATE TABLE `products` (
   `Category` varchar(255) DEFAULT NULL,
   `Price` float DEFAULT NULL,
   `Rating` float DEFAULT NULL,
-  `Type` varchar(255) DEFAULT NULL,
   `Stock` int(11) DEFAULT NULL,
   `Description` varchar(255) DEFAULT NULL,
   `Sales` int(11) DEFAULT NULL,
   `DiscountedPrice` float DEFAULT NULL,
-  `ProductImage` varchar(255) DEFAULT NULL,
-  `DateAdded` date DEFAULT NULL
+  `ProductImage` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`ProductID`, `Title`, `Category`, `Price`, `Rating`, `Type`, `Stock`, `Description`, `Sales`, `DiscountedPrice`, `ProductImage`, `DateAdded`) VALUES
-('P1', 'Product 1', 'Clothing', 19, 4, 'Apparel', 200, 'Sed ut updated unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 100, 29.99, 'product2.jpg', '2024-04-24'),
-('P2', 'Product 2', 'Clothing', 0, 4, 'Apparel', 200, 'Sed ut updated unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 100, 29.99, 'product2.jpg', '2024-04-26'),
-('P3', 'Product 3', 'Clothing', 0, 3, 'Apparel', 199, 'Sed ut updated unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 100, 29.99, 'product2.jpg', '2024-04-26');
+INSERT INTO `products` (`ProductID`, `Title`, `Category`, `Price`, `Rating`, `Stock`, `Description`, `Sales`, `DiscountedPrice`, `ProductImage`) VALUES
+('12', '12', '1', 12, 12, 21, 'no', 12, 1, 'q2oiejiqo'),
+('1212', 'sd', '1', 123, NULL, 1324, 'few', NULL, 321, 'da'),
+('P1', 'Product 22222', 'Clothing', 10, 4, 200, 'Sed ut updated unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 100, 29.99, 'product2.jpg'),
+('P2', 'Product 2', 'Clothing', 0, 4, 200, 'Sed ut updated unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 100, 29.99, 'product2.jpg'),
+('P3', 'Product 3', 'Clothing', 0, 3, 199, 'Sed ut updated unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.', 100, 29.99, 'product2.jpg');
 
 -- --------------------------------------------------------
 

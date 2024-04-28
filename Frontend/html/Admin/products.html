@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin dashboard</title>
+    <link rel="stylesheet" href="/Frontend/css/admin.css">
+</head>
+
+<body>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" id="menu-icon">&#9776;</label>
+    <section id="menu">
+        <div class="logo">
+            <img src="/Frontend/img/logo.png" alt="">
+            <h2>SmartSwipe</h2>
+        </div>
+        <div class="items">
+            <li>
+                <a href="">Dashboard</a>
+            </li>
+            <li>
+                <a href="">Products</a>
+            </li>
+            <li>
+                <a href="">Reviews</a>
+            </li>
+            <li>
+                <a href="">Faqs</a>
+            </li>
+            <li>
+                <a href="">Uaqs</a>
+            </li>
+            <li>
+                <a href="">Orders</a>
+            </li>
+            <li>
+                <a href="">Payments</a>
+            </li>
+            <li>
+                <a href="">Categories</a>
+            </li>
+            <li>
+                <a href="">Payment Methods</a>
+            </li>
+
+            <li>
+                <a href="" id="logout">Logout</a>
+            </li>
+
+        </div>
+    </section>
+    <div class="dashboard">
+        <form id="productForm" method="POST" action="http://localhost:5000/api/products/">
+
+            <input type="text" name="ProductID" id="productID" placeholder="ProductID" required>
+            <input type="text" name="Title" id="title" placeholder="Title" required>
+            <input type="text" name="Category" id="category" placeholder="Category" required>
+            <input type="number" name="Price" id="price" placeholder="Price" required>
+            <input type="number" name="Rating" id="rating" placeholder="Rating" value="0" readonly>
+            <input type="text" name="Type" id="type" placeholder="Type" required>
+            <input type="number" name="Stock" id="stock" placeholder="Stock" required>
+            <textarea name="Description" id="description" placeholder="Description" required></textarea>
+            <input type="number" name="Sales" id="sales" placeholder="Sales" value="0" readonly required>
+            <input type="number" name="DiscountedPrice" id="discountedPrice" placeholder="Discounted Price" required>
+            <input type="text" name="ProductImage" id="productImage" placeholder="Product Image" required>
+            <input type="datetime" name="DateAdded" id="dateAdded" placeholder="Date Added" required>
+            <button type="submit">Submit</button>
+        </form>
+
+    
+    </div>
+    <script src="https://kit.fontawesome.com/d6dabd964f.js" crossorigin="anonymous"></script>
+    <script src="/Frontend/js/admin.js"></script> <!-- JavaScript for handling menu toggle -->
+</body>
+
+</html>

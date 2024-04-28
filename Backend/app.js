@@ -15,7 +15,10 @@ const uaqsRoutes = require('./routes/uaqs');
 const app = express();
 
 
-
+app.use((req, res, next) => {
+    console.log('Requested:', req.method, req.originalUrl);
+    next(); // Pass control to the next middleware
+});
 
 // Middleware to parse URL-encoded bodies
 app.use(bodyParser.urlencoded({ extended:false}));
@@ -28,9 +31,11 @@ app.use(bodyParser.json());
 
 //Error handling for invalid json data
 app.use((err, req, res, next) => {
+    console.log(req.path,req.method)
     if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {
         res.status(400).send('Invalid JSON data');
     } else {
+        console("requested");
         next(err); // Pass the error to the next middleware
     }
 });

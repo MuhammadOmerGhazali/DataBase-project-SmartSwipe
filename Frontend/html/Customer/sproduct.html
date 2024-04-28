@@ -37,9 +37,107 @@
 
     <section id="prodetails" class="section-p1">
         <div class="single-pro-image">
-            
+            <img src="../../img/products/f1.jpg" width="100%" id="MainImg" alt="">
+            <div class="small-img-group">
+                <div class="small-img-col">
+                    <img src="../../img/products/f1.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="../../img/products/f2.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="../../img/products/f3.jpg" width="100%" class="small-img" alt="">
+                </div>
+                <div class="small-img-col">
+                    <img src="../../img/products/f4.jpg" width="100%" class="small-img" alt="">
+                </div>
+            </div>
         </div>
-        <div></div>
+        <div class="single-pro-detail">
+            <h6>Home / T-Shirt</h6>
+            <h4>Men's Fashion T-Shirt</h4>
+            <h2>$139</h2>
+            <select>
+                <option >Select Size</option>
+                <option >XL</option>
+                <option >XXL</option>
+                <option >Small</option>
+                <option >Large</option>
+            </select>
+            <input type="number" value="1">
+            <button class="normal">Add to Cart</button>
+            <h4>Product Details</h4>
+            <span>Indulge in effortless style and unparalleled comfort with our signature T-shirt. Crafted from the finest quality cotton, it offers a luxurious feel against the skin while ensuring durability that lasts wash after wash. Designed with meticulous attention to detail, its tailored fit flatters every silhouette, effortlessly elevating your casual ensemble. The timeless design exudes sophistication, making it a versatile staple for any wardrobe. Whether dressed up with a blazer or paired with your favorite denim, this T-shirt effortlessly enhances your look with its understated elegance and superior quality, setting you apart with every wear.</span>
+        </div>
+    </section>
+    <br><br><br>
+    <section id="product1" class="section-p1">
+        <h2>Featured  Products</h2>
+        <p>Summer collection new Modern design</p>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="../../img/products/n1.jpg" alt="">
+                <div class="des">
+                    <span>Adiddas</span>
+                    <h5>Cartoon Astrounat T-Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$78</h4>
+                </div>
+                <a href="#"><ion-icon name="cart-outline"></ion-icon></a>
+            </div>
+            <div class="pro">
+                <img src="../../img/products/n2.jpg" alt="">
+                <div class="des">
+                    <span>Adiddas</span>
+                    <h5>Cartoon Astrounat T-Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$78</h4>
+                </div>
+                <a href="#"><ion-icon name="cart-outline"></ion-icon></a>
+            </div><div class="pro">
+                <img src="../../img/products/n3.jpg" alt="">
+                <div class="des">
+                    <span>Adiddas</span>
+                    <h5>Cartoon Astrounat T-Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$78</h4>
+                </div>
+                <a href="#"><ion-icon name="cart-outline"></ion-icon></a>
+            </div><div class="pro">
+                <img src="../../img/products/n4.jpg" alt="">
+                <div class="des">
+                    <span>Adiddas</span>
+                    <h5>Cartoon Astrounat T-Shirts</h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h4>$78</h4>
+                </div>
+                <a href="#" ><ion-icon name="cart-outline"></ion-icon></a>
+            </div>
+        </div> 
     </section>
     <br><br><br>
     <footer class="section-p1">
@@ -86,6 +184,24 @@
         <p>@ 2024, Vendettas etc - Datbase course Project</p>
     </div>
 </footer>
+
+ <script>
+    var MainImg =document.getElementById("MainImg");
+    var smallimg=document.getElementsByClassName("small-img");
+
+    smallimg[0].onclick = function() {
+        MainImg.src = smallimg[0].src;
+    }
+    smallimg[1].onclick = function() {
+        MainImg.src = smallimg[1].src;
+    }
+    smallimg[2].onclick = function() {
+        MainImg.src = smallimg[2].src;
+    }
+    smallimg[3].onclick = function() {
+        MainImg.src = smallimg[3].src;
+    }
+ </script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="js/script.js"></script>

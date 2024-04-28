@@ -55,50 +55,54 @@
 
     <div class="dashboard">
         <button id="addbutton" onclick="toggleForm('addProduct')">Add Products</button>
-        
 
-        <form id="addProduct" action="" method="POST">
+
+        <form id="addProduct">
             <!-- Form to add a new product -->
             <input type="text" name="ProductID" id="productID" placeholder="ProductID" required>
             <input type="text" name="Title" id="title" placeholder="Title" required>
             <select name="Category" id="category" required>
                 <option value="" disabled selected>Select a category</option>
-                <option value="Category 1">Category 1</option>
+                <option value="1">1</option>
                 <option value="Category 2">Category 2</option>
                 <option value="Category 3">Category 3</option>
                 <!-- Add more options as needed -->
             </select>
-            
+
             <input type="number" name="Price" id="price" placeholder="Price" required>
             <input type="number" name="Stock" id="stock" placeholder="Stock" required>
             <textarea name="Description" id="description" placeholder="Description" required></textarea>
             <input type="number" name="DiscountedPrice" id="discountedPrice" placeholder="Discounted Price" required>
             <input type="text" name="ProductImage" id="productImage" placeholder="Product Image" required>
-            
+
             <button type="submit" id="Submit">Add Product</button>
         </form>
 
-        
 
-        <form id="updateProduct" action="" method="POST">
+
+        <form id="updateProduct">
             <!-- Form to add a new product -->
-            <input type="text" name="ProductID" id="productID" placeholder="ProductID" required>
-            <input type="text" name="Title" id="title" placeholder="Title" required>
-            <select name="Category" id="category" required>
+            <input type="text" name="ProductID" id="uproductID" placeholder="ProductID" required readonly>
+            <input type="text" name="Title" id="utitle" placeholder="Title" required>
+            <select name="Category" id="ucategory" required>
                 <option value="" disabled selected>Select a category</option>
-                <option value="Category 1">Category 1</option>
-                <option value="Category 2">Category 2</option>
-                <option value="Category 3">Category 3</option>
-                <!-- Add more options as needed -->
+                <option value="1">1</option>
+                <option value="2">Clothing</option>
+                <option value="3">a</option>
+                <!-- Add more options as needed with their corresponding category IDs -->
             </select>
-            
-            <input type="number" name="Price" id="price" placeholder="Price" required>
-            <input type="number" name="Stock" id="stock" placeholder="Stock" required>
-            <textarea name="Description" id="description" placeholder="Description" required></textarea>
-            <input type="number" name="DiscountedPrice" id="discountedPrice" placeholder="Discounted Price" required>
-            <input type="text" name="ProductImage" id="productImage" placeholder="Product Image" required>
-            
-            <button type="submit" id="Submit">Update</button>
+
+            <!-- Add more options as needed -->
+
+
+            <input type="number" name="Price" id="uprice" placeholder="Price" required>
+            <input type="number" name="Stock" id="ustock" placeholder="Stock" required>
+            <textarea name="Description" id="udescription" placeholder="Description" required></textarea>
+            <input type="number" name="DiscountedPrice" id="udiscountedPrice" placeholder="Discounted Price" required>
+            <input type="text" name="ProductImage" id="uproductImage" placeholder="Product Image" required>
+
+            <button type="submit" id="uSubmit">Update</button>
+
         </form>
 
         <div class="allProducts">
@@ -118,7 +122,7 @@
                     </tr>
                 </thead>
                 <tbody class="products-body">
-                    <!-- Products will be added here dynamically -->
+
                 </tbody>
             </table>
         </div>

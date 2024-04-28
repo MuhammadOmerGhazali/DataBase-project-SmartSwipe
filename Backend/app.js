@@ -18,7 +18,7 @@ const app = express();
 app.use(cors());
 
 app.use((req, res, next) => {
-    console.log('Requested:', req.method, req.originalUrl);
+    console.log('Requested:', req.method, req.originalUrl,req.body);
     next(); // Pass control to the next middleware
 });
 

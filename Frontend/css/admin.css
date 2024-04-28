@@ -206,6 +206,8 @@ body {
 
 #updateProduct{
     display: none;
+    margin-bottom: 30px;
+
 }
 
 /* Input fields */
@@ -216,7 +218,15 @@ body {
 #stock,
 #discountedPrice,
 #productImage,
-#description {
+#description,
+#uproductID,
+#utitle,
+#ucategory,
+#uprice,
+#ustock,
+#udiscountedPrice,
+#uproductImage,
+#udescription {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -231,7 +241,7 @@ textarea {
 }
 
 /* Submit button */
-#Submit {
+#Submit, #uSubmit {
     background-color: #4CAF50; /* Green */
     color: white;
     padding: 15px 20px;
@@ -239,15 +249,18 @@ textarea {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    
 }
 
-#Submit:hover {
+#Submit:hover, #uSubmit:hover {
     background-color: #45a049;
+    
 }
 
 
 /* Style the select box */
-#category {
+#category,
+#ucategory {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -264,7 +277,8 @@ textarea {
 }
 
 /* Style the options */
-#category option {
+#category option,
+#ucategory option {
     padding: 10px;
     background-color: #fff;
     color: #333;

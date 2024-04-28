@@ -10,6 +10,7 @@ const faqsRoutes = require('./routes/faqs');
 const ordersRoutes = require('./routes/orders');
 const OrderedproductsRoutes = require('./routes/orderedProducts');
 const paymentsRoutes = require('./routes/payments');
+const reviewRoutes = require('./routes/reviews');
 const app = express();
 
 
@@ -44,6 +45,7 @@ app.use('/api/faqs',faqsRoutes);
 app.use('/api/orders',ordersRoutes);
 app.use('/api/orderedproducts',OrderedproductsRoutes);
 app.use('/api/payments',paymentsRoutes);
+app.use('/api/reviews',reviewRoutes);
 
 
 

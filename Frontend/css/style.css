@@ -40,9 +40,7 @@ p {
   margin: 15px 0 20px 0;
 }
 
-.section-p1 {
-  padding: 40px 80px;
-}
+
 
 .section-m1 {
   margin: 40px 0;
@@ -70,7 +68,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 80px;
+    padding: 10px 80px;
     background: white;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.06);
     z-index: 999;
@@ -158,8 +156,10 @@ body {
 #feature{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
+  padding:0 20px;
+  margin-top: 30px;
 }
 #feature .fe-box{
   width: 180px;
@@ -190,9 +190,10 @@ body {
 }
 #product1 .pro-container{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding-top: 20px;
   flex-wrap: wrap;
+  padding: 0 30px;
 }
 #product1 .pro{
   width: 23%;
@@ -217,6 +218,7 @@ body {
 }
 #product1 .pro a img{
     width: 10%;
+    /* margin-left: 10px; */
 }
 #product1 .pro {
   text-align: start;
@@ -258,16 +260,15 @@ body {
   color: #ef3636;
 }
 
-footer{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+
 footer .col{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 20px;
+  /* white-space: nowrap;   */
+  width: 100%;
+  
 }
 footer h4{
   font-size: 13px;
@@ -286,4 +287,47 @@ footer a{
 footer .copyright{
   display: flex;
   text-align: center;
+}
+
+.col-flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 95%;
+  gap:5%;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 98vw; 
+  padding: 0 10%;
+}
+
+.copyright {
+  margin-top: auto; /* Push to the bottom of the footer */
+}
+
+
+
+.pro>div{
+  padding:0 10px;
+}
+
+
+
+.icon img{
+  margin: 6px;
+}
+
+#product1{
+  margin-top: 30px;
+
+}
+
+
+#header a{
+  
 }

@@ -38,6 +38,266 @@ html {
   color: #fff;
 }
 
+/* Cart Styles */
+#cart .table {
+  width: 100px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  white-space: nowrap;
+}
+
+#cart table img{
+  width: 70px;
+}
+#cart {
+  margin: 30px;
+}
+
+#cart .table:nth-child(1){
+  width: 100px;
+  text-align: center;
+}
+
+#cart .table:nth-child(2){
+  width: 150px;
+  text-align: center;
+}
+
+#cart .table:nth-child(3){
+  width: 250px;
+  text-align: center;
+}
+
+#cart .table:nth-child(4),
+#cart .table:nth-child(5),
+#cart .table:nth-child(6){
+  width: 150px;
+  text-align: center;
+}
+
+#cart .table:nth-child(5){
+  width: 70px;
+  padding: 10px 5px 0 15px;
+}
+#cart .table thead{
+  border: 1px solid #e2e9e1;
+  border-left: none;
+  border-right: none;
+}
+#cart .table thead td{
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+  padding: 18px 0;
+}
+
+#cart .table tbody tr td{
+  padding: 15px;
+}
+
+#cart .table tbody td{
+  font-size: 13px;
+}
+
+#cart-add{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#cart-add .coupon{
+width: 50%;
+margin-bottom: 30px;
+}
+
+#cart-add .coupon h3,
+#SubTotal h3{
+  margin-left: 30px;
+  padding-bottom: 15px;
+}
+
+#cart-add .coupon  input{
+  margin-left: 30px;
+  padding: 10px 20px;
+  outline: none;
+  width: 60%;
+  margin-right: 10px;
+  border: 1px solid #e2e9e1;
+}
+
+#cart-add .coupon  button,
+#SubTotal button{
+  background-color: #088178;  padding: 10px 20px;
+  color: #fff;
+}
+
+#SubTotal {
+  width: 50%;
+  margin-bottom: 30px;
+  border: 1px solid #e2e9e1;
+  padding: 30px;
+}
+
+#SubTotal table{
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#SubTotal table td{
+  width: 50%;
+  border: 1px solid #e2e9e1;
+  padding: 10px;
+  font-size: 13px;
+}
+
+#contact-details {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+#contact-details .Details{
+  width: 40%;
+}
+#contact-details div{
+  margin-left: 20px;
+}
+
+#contact-details .Details h3{
+  font-size: 16px;
+  padding-bottom: 15px;
+}
+
+#contact-details .Details li{
+  list-style: none;
+  display: flex;
+  padding: 10px 0;
+}
+#contact-details .Details li i{
+  font-size: 14px;
+  padding-right: 22px;
+}
+
+#form-details form{
+width: 65%;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+}
+
+#contact-details .Details li p{
+  font-size: 14px;
+  margin : 0;
+}
+
+#contact-details .map{
+  width: 55%;
+  height: 400px;
+}
+
+#contact-details .map iframe{
+  width: 100%;
+  height: 100%;
+}
+
+#contact-details .Details span,
+#form-details form span{
+  font-size: 12px;
+}
+
+#contact-details .Details h2,
+#form-details form h2{
+  font-size: 26px;
+  line-height: 35px;
+  padding: 20px 0;
+} 
+
+#form-details {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 30px;
+  padding: 80px;
+  border: 1px solid #e1e1e1;
+}
+
+#form-details form input,
+#form-details form textarea{
+width: 100%;
+padding: 12px 5px;
+outline: none;
+margin-bottom: 20px;
+border: 1px solid #e1e1e1;
+}
+
+#form-details form button{
+  background-color: #088178;
+  color: #fff;
+}
+
+#form-details .people div{
+  padding-bottom: 25px;
+  display: flex;
+  align-items: flex-start ;
+  margin-left: 30px;
+}
+
+#form-details .people div img{
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+#form-details .people div p{
+ margin: 0;
+ font-size: 13px;
+ line-height: 25px;
+}
+
+#form-details .people div p span{
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+/* About styles */
+#page-header .about-header{
+  background-image: url(../img/about/banner.png);
+}
+
+#about-head img{
+ width: 50%;
+ height: auto;
+}
+
+
+#about-head div{
+ padding-left: 40px;
+}
+
+#about-app {
+  text-align: center;
+}
+
+#about-app .video{
+  width: 70%;
+  height: 100%;
+  margin: 30px auto 0 auto ;
+}
+
+#about-app .video video{
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+#about-head {
+  display: flex;
+  align-items: center;
+}
+
 /* sproduct styles */
 
 #prodetails .single-pro-image

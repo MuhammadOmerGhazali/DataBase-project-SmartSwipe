@@ -48,6 +48,20 @@ p {
   margin: 40px 0;
 }
 
+button.normal{
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 30px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+
+}
+
 body {
   width: 100%;
 }
@@ -170,4 +184,106 @@ body {
   border-radius: 4px;
   color: #088178;
   background-color: #fddde4;
+}
+#product1{
+  text-align: center;
+}
+#product1 .pro-container{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  flex-wrap: wrap;
+}
+#product1 .pro{
+  width: 23%;
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 1px solid #cce7d0;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 20px 20px 30px  rgba(0, 0, 0, 0.03);
+  margin: 15px 0px;
+  transition: 0.2s ease;
+}
+#product1 .pro:hover{
+  box-shadow: 20px 20px 40px  rgba(0, 0, 0, 0.06);
+} 
+#product1 .pro img{
+  width: 100%;
+  border-radius: 20px;
+}
+#product1 .pro .star img{
+  width: 10%;
+}
+#product1 .pro a img{
+    width: 10%;
+}
+#product1 .pro {
+  text-align: start;
+  padding: 10px 0;
+}
+#product1 .pro span{
+  color: #606063;
+  font-size: 12px;
+}
+#product1 .pro h5{
+  padding-top: 7px;
+  color: #1a1a1a;
+  font-size: 14px;
+}
+
+#banner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url(/Frontend/img/banner/b2.jpg);
+  width: 100%;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+}
+
+#banner h4{
+  color: #fff;
+  font-size: 16px;
+}
+#banner h2{
+  color: #fff;
+  font-size: 30px;
+  padding: 10px 0;
+}
+#banner h2 span{
+  color: #ef3636;
+}
+
+footer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+footer .col{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+footer h4{
+  font-size: 13px;
+  padding-bottom: 20px;
+}
+footer p{
+  font-size: 13px;
+  margin: 0 0 8px 0;
+}
+footer a{
+  font-size: 13px;
+  text-decoration: none;
+  color: #222;
+  margin-bottom: 10px;
+}
+footer .copyright{
+  display: flex;
+  text-align: center;
 }

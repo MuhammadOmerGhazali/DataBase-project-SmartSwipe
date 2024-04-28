@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
     <section id="header">
         <a href="#"><img src="/Frontend/img/logo.png" width="48" height="48" class="logo" alt=""> 
             <div>
@@ -33,26 +34,13 @@
 
     <section id="prodetails" class="section-p1">
         <div class="single-pro-image">
-            <img src="/Frontend/img/products/f1.jpg" width="100%" id="MainImg" alt="">
-            <div class="small-img-group">
-                <div class="small-img-col">
-                    <img src="/Frontend/img/products/f1.jpg" width="100%" class="small-img" alt="">
-                </div>
-                <div class="small-img-col">
-                    <img src="/Frontend/img/products/f2.jpg" width="100%" class="small-img" alt="">
-                </div>
-                <div class="small-img-col">
-                    <img src="/Frontend/img/products/f3.jpg" width="100%" class="small-img" alt="">
-                </div>
-                <div class="small-img-col">
-                    <img src="/Frontend/img/products/f4.jpg" width="100%" class="small-img" alt="">
-                </div>
+            <img src="/Frontend/img/products/f4.jpg" width="100%" id="MainImg" alt=""> <!--add "ProductImage" here-->
             </div>
         </div>
         <div class="single-pro-detail">
             <h6>Home / T-Shirt</h6>
-            <h4>Men's Fashion T-Shirt</h4>
-            <h2>$139</h2>
+            <h4>Title</h4>                                             <!--add "Title" here-->
+            <h2>Price</h2>                                                               <!--add "Price" here-->
             <select>
                 <option >Select Size</option>
                 <option >XL</option>
@@ -63,7 +51,7 @@
             <input type="number" value="1">
             <button class="normal">Add to Cart</button>
             <h4>Product Details</h4>
-            <span>Indulge in effortless style and unparalleled comfort with our signature T-shirt. Crafted from the finest quality cotton, it offers a luxurious feel against the skin while ensuring durability that lasts wash after wash. Designed with meticulous attention to detail, its tailored fit flatters every silhouette, effortlessly elevating your casual ensemble. The timeless design exudes sophistication, making it a versatile staple for any wardrobe. Whether dressed up with a blazer or paired with your favorite denim, this T-shirt effortlessly enhances your look with its understated elegance and superior quality, setting you apart with every wear.</span>
+            <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi consectetur veniam dolores consequuntur exercitationem, rem cumque dolorem deserunt iste soluta ex repellat ea ullam! Sunt consectetur perspiciatis mollitia dicta illum?</span> <!--add "Description" here-->
         </div>
     </section>
     <br><br><br>
@@ -154,25 +142,24 @@
         </div>
         <div class="col">
             <h4>About</h4>
-            <a href="#">About us</a>
-            <a href="#">Delivery Information</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms and Conditions</a>
-            <a href="#">Contact Us</a>
+            <a href="/Frontend/html/Customer/about.html">About us</a>
+            <a href="/Frontend/html/termsCon.html">Delivery Information</a>
+            <a href="/Frontend/html/privacy-policy.html">Privacy Policy</a>
+            <a href="/Frontend/html/termsCon.html">Terms and Conditions</a>
+            <a href="/Frontend/html/privacy-policy.html">Contact Us</a>
         </div>
         <div class="col">
             <h4>My Account</h4>
-            <a href="#">Sign In</a>
-            <a href="#">View Cart</a>
-            <a href="#">My WishList</a>
-            <a href="#">Track My orders</a>
-            <a href="#">Help</a>
+            <a href="/Frontend/html/login.html">Sign In</a>
+            <a href="/Frontend/html/Customer/cart.html">View Cart</a>
+            <a href="/Frontend/html/Customer/cart.html">Track My orders</a>
+            <a href="/Frontend/html/termsCon.html">Help</a>
         </div>
             <div class="col">
                 <h4>Browse</h4>
-                <a href="#">Categories</a>
-                <a href="#">New Arrivals</a>
-                <a href="a">Sale</a>
+                <a href="/Frontend/html/Customer/shop.html">Categories</a>
+                <a href="/Frontend/html/Customer/shop.html">New Arrivals</a>
+                <a href="/Frontend/html/Customer/shop.html">Sale</a>
                 
             </div>
         </div>
@@ -180,7 +167,11 @@
         <p>@ 2024, Vendettas etc - Datbase course Project</p>
     </div>
 </footer>
-
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        displayProductData();
+    });
+</script>
  <script>
     var MainImg =document.getElementById("MainImg");
     var smallimg=document.getElementsByClassName("small-img");
@@ -198,6 +189,29 @@
         MainImg.src = smallimg[3].src;
     }
  </script>
+<script>
+    async function displayProductData() {
+        // Fetch product data from the API
+        const productId = urlParams.get('id'); //product-details.html?id=1 url parameters
+        const product = await fetchProduct(productId);
+
+        // Get the container element where you want to display the product details
+        const productDetailsContainer = document.querySelector('#prodetails .single-pro-detail');
+
+        // Create HTML elements to display the product details
+        const productNameElement = document.createElement('h4');
+        productNameElement.textContent = product.name;
+        const productPriceElement = document.createElement('h2');
+        productPriceElement.textContent = `$${product.price}`;
+        const productDescriptionElement = document.createElement('span');
+        productDescriptionElement.textContent = product.description;
+
+        // Append the created elements to the container
+        productDetailsContainer.appendChild(productNameElement);
+        productDetailsContainer.appendChild(productPriceElement);
+        productDetailsContainer.appendChild(productDescriptionElement);
+    }
+    </script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="js/script.js"></script>

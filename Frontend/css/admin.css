@@ -1,0 +1,175 @@
+body {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+#menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+#menu {
+    background-color: #000000;
+    width: 20%;
+    min-height: 100vh;
+    padding: 30px 0 0 30px;
+    min-width: 200px;
+}
+
+.logo img {
+    width: 40px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 7%;
+    margin-bottom: 30px;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+}
+
+.items li {
+    list-style: none;
+    padding: 0;
+}
+
+.items li a {
+    display: block;
+    height: 2.4em;
+    border: 1px solid #162938;
+    padding: 0 15px;
+    line-height: 2.4em;
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 254, 254);
+}
+
+.items li:hover a {
+    background-color: #2b516e;
+    color: #fff;
+}
+
+.dashboard {
+    flex: 1;
+    min-height: 100vh;
+    background-color: rgb(205, 211, 211);
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 230px;
+    justify-content: center;
+    gap: 0;
+    margin: 20px;
+}
+
+.stats {
+    flex: 1;
+    min-width: 200px;
+    max-width: 230px;
+    height: 150px;
+    background-color: #fff;
+    border: 1px solid #000;
+    margin: 10px;
+}
+
+#logout {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#logout:hover {
+    background-color: red;
+}
+
+.logo h2 {
+    color: white;
+}
+
+.stats{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+@media screen and (max-width: 768px) {
+    #menu {
+        width: 30%;
+    }
+}
+
+
+
+
+#dateAdded{
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+/* Form styling */
+.dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#productForm {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#productForm input[type="text"],
+#productForm input[type="number"],
+#productForm textarea,
+#productForm button {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#productForm textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+#productForm button {
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+}
+
+#productForm button:hover {
+    background-color: #45a049;
+}

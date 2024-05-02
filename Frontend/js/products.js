@@ -142,6 +142,10 @@ productsBody.addEventListener('click', (e) => {
             document.querySelector('#uproductImage').value = data.ProductImage;
         })
         .catch(error => console.error('Error:', error));
+
+        
+
+
         toggleForm('updateProduct');
     }
 });
@@ -195,3 +199,25 @@ updateProductForm.addEventListener('submit', (e) => {
 
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to fetch categories and populate the dropdown
+    function populateCategories(selectId) {
+        const categorySelect = document.getElementById(selectId);
+        
+        fetch('http://localhost:5000/api/categories/')
+            .then(response => response.json())
+            .then(categories => {
+                categories.forEach(category => {
+                    const option = document.createElement('option');
+                    option.text = category.Category;
+                    option.value = category.Category;
+                    categorySelect.appendChild(option);
+                });
+            })
+            .catch(error => console.error('Error fetching categories:', error));
+    }
+
+    // Call the function to populate categories for both add and update forms
+    populateCategories('category'); // For add form
+    populateCategories('ucategory'); // For update form
+});

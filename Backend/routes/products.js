@@ -6,7 +6,7 @@ const pool = require('../databaseConnection');
 router.get('/', (req, res) => {
     pool.getConnection((err, connection) => {
         if (err) {
-            connection.release();
+            
             return res.status(500).json({ message: 'Internal Server Error' });
         }
         connection.query('SELECT * FROM products', (err, products) => {
@@ -28,7 +28,8 @@ router.get('/:id', (req, res) => {
         }
         connection.query('SELECT * FROM products WHERE ProductID = ?', [req.params.id], (err, product) => {
             connection.release();
-            if (err) {
+            if (err) 
+            {
                 return res.status(500).json({ message: err.message });
             }
             if (!product || product.length === 0) {
@@ -51,7 +52,7 @@ router.post('/', (req, res) => {
             if (err) {
                 return res.status(500).json({ message: err.message });
             }
-            res.status(201).json({ message: 'Product inserted successfully', productId: result.insertId });
+            res.status(200).json({ message: 'Product inserted successfully', productId: result.insertId });
         });
     });
 });

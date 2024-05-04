@@ -1,6 +1,6 @@
+//Importing dependencies
 require('dotenv').config();
 const cors= require('cors');
-const mysql = require('mysql');
 const express = require('express');
 const bodyParser = require('body-parser');
 const productRoutes = require('./routes/products');
@@ -23,15 +23,10 @@ app.use((req, res, next) => {
 });
 
 // Middleware to parse URL-encoded bodies
-app.use(bodyParser.urlencoded({ extended:false}));
+app.use(bodyParser.urlencoded({ extended:true}));
 
 //Converting body to json format
 app.use(bodyParser.json());
-
-
-
-
-
 
 //Error handling for invalid json data
 app.use((err, req, res, next) => {
@@ -44,8 +39,6 @@ app.use((err, req, res, next) => {
     }
 });
 
-
-
 //Middleware for hadling API calls
 app.use('/api/products',productRoutes);
 app.use('/api/categories',categoryRoutes);
@@ -57,14 +50,6 @@ app.use('/api/orderedproducts',OrderedproductsRoutes);
 app.use('/api/payments',paymentsRoutes);
 app.use('/api/reviews',reviewRoutes);
 app.use('/api/uaqs',uaqsRoutes);
-
-
-
-
-
-
-
-
 
 //listening to port
 app.listen(process.env.PORT,() =>{

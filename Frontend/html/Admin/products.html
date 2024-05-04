@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
     <link rel="stylesheet" href="/Frontend/css/admin.css">
-    <link rel="stylesheet" href="/Frontend/css/productsCRUD.css">
+    <link rel="stylesheet" href="/Frontend/css/productsAdmin.css">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
                 <a href="/Frontend/html/Admin/adminhomepage.html">Dashboard</a>
             </li>
             <li>
-                <a href="#">Products</a>
+                <a href="/Frontend/html/Admin/products.html">Products</a>
             </li>
             <li>
                 <a href="#">Reviews</a>
@@ -41,14 +41,14 @@
                 <a href="#">Payments</a>
             </li>
             <li>
-                <a href="#">Categories</a>
+                <a href="/Frontend/html/Admin/categories.html">Categories</a>
             </li>
             <li>
                 <a href="#">Payment Methods</a>
             </li>
 
             <li>
-                <a href="/Frontend/html/login.html" id="">Logout</a>
+                <a href="/Frontend/html/login.html" id="logout">Logout</a>
             </li>
 
         </div>
@@ -57,10 +57,6 @@
 
     <div class="dashboard">
         <button id="addbutton" onclick="toggleForm('addProduct')">Add Products</button>
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 
 
         <form id="addProduct">
@@ -82,10 +78,6 @@
             <button type="submit" id="Submit">Add Product</button>
         </form>
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 
 
         <form id="updateProduct">
@@ -98,27 +90,13 @@
                 <!-- Add more options as needed with their corresponding category IDs -->
             </select>
 
-<<<<<<< Updated upstream
-            <!-- Add more options as needed -->
-
-
             <input type="number" name="Price" id="uprice" placeholder="Price" required>
             <input type="number" name="Stock" id="ustock" placeholder="Stock" required>
             <textarea name="Description" id="udescription" placeholder="Description" required></textarea>
             <input type="number" name="DiscountedPrice" id="udiscountedPrice" placeholder="Discounted Price" required>
             <input type="text" name="ProductImage" id="uproductImage" placeholder="Product Image" required>
 
-            <button type="submit" id="uSubmit">Update</button>
-
-=======
-            <input type="number" name="Price" id="price" placeholder="Price" required>
-            <input type="number" name="Stock" id="stock" placeholder="Stock" required>
-            <textarea name="Description" id="description" placeholder="Description" required></textarea>
-            <input type="number" name="DiscountedPrice" id="discountedPrice" placeholder="Discounted Price" required>
-            <input type="text" name="ProductImage" id="productImage" placeholder="Product Image" required>
-
             <button type="submit" id="Submit">Update</button>
->>>>>>> Stashed changes
         </form>
 
         <div class="allProducts">
@@ -145,6 +123,7 @@
     </div>
 
     <script src="/Frontend/js/products.js"></script>
+    <script src="/Frontend/js/script.js"></script>
 
 </body>
 

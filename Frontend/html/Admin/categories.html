@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categories</title>
     <link rel="stylesheet" href="/Frontend/css/admin.css">
+    <link rel="stylesheet" href="/Frontend/css/categories.css">
 </head>
 
 <body>
@@ -18,10 +19,10 @@
         </div>
         <div class="items">
             <li>
-                <a href="">Dashboard</a>
+                <a href="/Frontend/html/Admin/adminhomepage.html">Dashboard</a>
             </li>
             <li>
-                <a href="">Products</a>
+                <a href="/Frontend/html/Admin/products.html">Products</a>
             </li>
             <li>
                 <a href="">Reviews</a>
@@ -39,7 +40,7 @@
                 <a href="">Payments</a>
             </li>
             <li>
-                <a href="">Categories</a>
+                <a href="/Frontend/html/Admin/categories.html">Categories</a>
             </li>
             <li>
                 <a href="">Payment Methods</a>
@@ -54,66 +55,34 @@
 
 
     <div class="dashboard">
-        <button id="addbutton" onclick="toggleForm('addProduct')">Add Products</button>
+        <button id="addCategoryBtn" onclick="toggleForm('addCategory')">Add Categories</button>
 
 
-        <form id="addProduct">
-            <!-- Form to add a new product -->
-            <input type="text" name="Category" id="category" placeholder="Category" required>
+        <form id="addCategory">
+            <!-- Form to add a new category -->
+            <input type="text" name="Category" id="category" placeholder="Category Name" required>
             <button type="submit" id="Submit">Add Category</button>
         </form>
 
 
-
-        <form id="updateProduct">
-            <!-- Form to add a new product -->
-            <input type="text" name="ProductID" id="uproductID" placeholder="ProductID" required readonly>
-            <input type="text" name="Title" id="utitle" placeholder="Title" required>
-            <select name="Category" id="ucategory" required>
-                <option value="" disabled selected>Select a category</option>
-                <option value="1">1</option>
-                <option value="2">Clothing</option>
-                <option value="3">a</option>
-                <!-- Add more options as needed with their corresponding category IDs -->
-            </select>
-
-            <!-- Add more options as needed -->
-
-
-            <input type="number" name="Price" id="uprice" placeholder="Price" required>
-            <input type="number" name="Stock" id="ustock" placeholder="Stock" required>
-            <textarea name="Description" id="udescription" placeholder="Description" required></textarea>
-            <input type="number" name="DiscountedPrice" id="udiscountedPrice" placeholder="Discounted Price" required>
-            <input type="text" name="ProductImage" id="uproductImage" placeholder="Product Image" required>
-
-            <button type="submit" id="uSubmit">Update</button>
-
-        </form>
-
-        <div class="allProducts">
+        <div class="allCategories">
             <!-- Table to display all products -->
-            <table class="products-table">
+            <table class="categories-table">
                 <thead>
                     <tr>
-                        <th>Product ID</th>
-                        <th>Title</th>
                         <th>Category</th>
-                        <th>Price</th>
-                        <th>Stock</th>
-                        <th>Description</th>
-                        <th>Discounted Price</th>
-                        <th>Product Image</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody class="products-body">
+                <tbody class="categories-body">
 
                 </tbody>
             </table>
         </div>
     </div>
 
-    <script src="/Frontend/js/admin.js"></script>
+    <script src="/Frontend/js/categories.js"></script>
+    <script src="/Frontend/js/script.js"></script>
 
 </body>
 

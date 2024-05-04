@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
                 res.send(brands)
             }
             else {
-                return res.status(500).send(err.message);
+                return res.status(500).json({ message: err.message });
             }
         })
 
@@ -32,15 +32,15 @@ router.post('/', (req, res) => {
     pool.getConnection((err,connetion) =>{
         if (err){
             connetion.release();
-            return res.status(500).send('Internal Server Error');
+            return res.status(500).json({message : 'Internal Server Error'});
         }
         connetion.query('Insert into categories SET ? ',[req.body],(err,product) =>{
             if(!err){
-                res.send("Inserted successfully!")
+                return res.status(200).json({message: 'Inserted successfully!'})
 
             }
             else{
-                return res.status(500).send(err.message);
+                return res.status(500).json({ message: err.message });
             }
         })
     })
@@ -53,16 +53,16 @@ router.delete('/:id', (req, res) => {
     pool.getConnection((err, connetion) => {
         if (err){
             connetion.release();
-            return res.status(500).send('Internal Server Error');
+            return res.status(500).json({message : 'Internal Server Error'});
         }
         connetion.query('Delete from categories where Category = ?', [req.params.id], (err, products) => {
             connetion.release();
 
             if (!err) {
-                res.send("Deleted successfully!")
+                return res.status(200).json({message: 'Deleted successfully!'})
             }
             else {
-                return res.status(500).send(err.message);
+                return res.status(500).json({ message: err.message });
             }
         })
 

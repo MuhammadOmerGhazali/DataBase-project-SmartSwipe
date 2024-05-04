@@ -1,28 +1,14 @@
-
-
-//Toggling dispaly of forms
-function toggleForm(id) {
-    var form = document.getElementById(id);
-    if (form.style.display == 'none') {
-        form.style.display = 'block';
-    }
-    else {
-        form.style.display = 'none';
-    }
-}
-
 //Get request for products
 const productsUrl = 'http://localhost:5000/api/products/';
 const productsBody = document.querySelector('.products-body');
 let output = '';
 
-
-
-
 const renderProducts = (products) => {
     products.forEach(product => {
+
+        const encodedProductId = encodeURIComponent(product.ProductID); 
         output += `
-            <tr data-id=${product.ProductID}>
+            <tr data-id=${encodedProductId}>
                 <td>${product.ProductID}</td>
                 <td>${product.Title}</td>
                 <td>${product.Category}</td>
@@ -48,16 +34,10 @@ fetch(productsUrl)
 
 
 //Post request for products
-
-
-
-
-
-//Post request for products
 const addProductForm = document.querySelector('#addProduct'); // Select the form element
 
 addProductForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+
 
     // Select form inputs by their IDs
     const productID = document.querySelector('#productID').value;
@@ -68,10 +48,6 @@ addProductForm.addEventListener('submit', (e) => {
     const description = document.querySelector('#description').value;
     const discountedPrice = document.querySelector('#discountedPrice').value;
     const productImage = document.querySelector('#productImage').value;
-
-
-    //
-    
 
     // Make the POST request with form data
     fetch(productsUrl, {
@@ -90,21 +66,26 @@ addProductForm.addEventListener('submit', (e) => {
             ProductImage: productImage
         })
     })
-        .then(res => res.json())
+        .then(res => 
+            {
+                if (!res.ok) {
+                    return res.json().then(errorData => {
+                        
+                        throw new Error(errorData.message);
+                    });
+                }
+                // Return the promise for parsing JSON
+                return res.json();
+            }
+        )
         .then(data => {
-            // Display the message to the user
             alert(data.message);
-            output = ''
-            fetch(productsUrl)
-                .then(res => res.json())
-                .then(data => renderProducts(data))
-                .catch(error => console.error('Error:', error));
-            toggleForm('addProduct');
+            // location.reload();
 
         })
         .catch(error => {
-            console.error('Error:', error);
-            // Handle errors if necessary
+            alert(error)
+            location.reload();
         });
 });
 
@@ -118,44 +99,39 @@ productsBody.addEventListener('click', (e) => {
         fetch(`${productsUrl}/${id}`, {
             method: 'DELETE',
         })
-        .then(res => res.json())
-        .then(data => { 
-            alert(data.message);
-            location.reload(); // Reload the page after deletion
-        });
+            .then(res => res.json())
+            .then(data => {
+                alert(data.message);
+                location.reload(); // Reload the page after deletion
+            });
     }
 
-    if (e.target.id === 'update-product') {
-        
+    else if (e.target.id === 'update-product') {
+
         let id = e.target.parentElement.parentElement.dataset.id;
         fetch(`${productsUrl}/${id}`)
-        .then(res => res.json())
-        .then(data => {
-            // Populate form fields with fetched data
-            document.querySelector('#uproductID').value = data.ProductID;
-            document.querySelector('#utitle').value = data.Title;
-            document.querySelector('#ucategory').value = data.Category;
-            document.querySelector('#uprice').value = data.Price;
-            document.querySelector('#ustock').value = data.Stock;
-            document.querySelector('#udescription').value = data.Description;
-            document.querySelector('#udiscountedPrice').value = data.DiscountedPrice;
-            document.querySelector('#uproductImage').value = data.ProductImage;
-        })
-        .catch(error => console.error('Error:', error));
-
-        
-
-
-        toggleForm('updateProduct');
+            .then(res => res.json())
+            .then(data => {
+                // Populate form fields with fetched data
+                document.querySelector('#uproductID').value = data.ProductID;
+                document.querySelector('#utitle').value = data.Title;
+                document.querySelector('#ucategory').value = data.Category;
+                document.querySelector('#uprice').value = data.Price;
+                document.querySelector('#ustock').value = data.Stock;
+                document.querySelector('#udescription').value = data.Description;
+                document.querySelector('#udiscountedPrice').value = data.DiscountedPrice;
+                document.querySelector('#uproductImage').value = data.ProductImage;
+                toggleForm('updateProduct');
+            })
+            .catch(error => console.error('Error:', error));
     }
 });
 
 
 // Add event listener for the update form submission
 const updateProductForm = document.querySelector('#updateProduct');
+
 updateProductForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
     // Select form inputs by their IDs
     const updatedProductID = document.querySelector('#uproductID').value;
     const updatedTitle = document.querySelector('#utitle').value;
@@ -183,27 +159,27 @@ updateProductForm.addEventListener('submit', (e) => {
             ProductImage: updatedProductImage
         })
     })
-    .then(res => res.json())
-    .then(data => {
-        // Display the message to the user
-        alert(data.message);
-        toggleForm('updateProduct'); // Close the update form
-        location.reload(); // Reload the page to reflect changes
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        // Handle errors if necessary
-    });
+        .then(res => res.json())
+        .then(data => {
+            // Display the message to the user
+            console.log(data);
+            toggleForm('updateProduct'); // Close the update form
+            location.reload(); // Reload the page to reflect changes
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Handle errors if necessary
+        });
 });
 
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Function to fetch categories and populate the dropdown
     function populateCategories(selectId) {
         const categorySelect = document.getElementById(selectId);
-        
+
         fetch('http://localhost:5000/api/categories/')
             .then(response => response.json())
             .then(categories => {
@@ -221,3 +197,4 @@ document.addEventListener('DOMContentLoaded', function() {
     populateCategories('category'); // For add form
     populateCategories('ucategory'); // For update form
 });
+

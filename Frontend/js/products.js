@@ -38,7 +38,7 @@ const addProductForm = document.querySelector('#addProduct'); // Select the form
 
 addProductForm.addEventListener('submit', (e) => {
 
-
+    e.preventDefault();
     // Select form inputs by their IDs
     const productID = document.querySelector('#productID').value;
     const title = document.querySelector('#title').value;
@@ -68,19 +68,12 @@ addProductForm.addEventListener('submit', (e) => {
     })
         .then(res => 
             {
-                if (!res.ok) {
-                    return res.json().then(errorData => {
-                        
-                        throw new Error(errorData.message);
-                    });
-                }
-                // Return the promise for parsing JSON
                 return res.json();
             }
         )
         .then(data => {
             alert(data.message);
-            // location.reload();
+            location.reload();
 
         })
         .catch(error => {
@@ -94,6 +87,7 @@ addProductForm.addEventListener('submit', (e) => {
 //Deleting  and updating
 
 productsBody.addEventListener('click', (e) => {
+    e.preventDefault();
     if (e.target.id === 'delete-product') {
         let id = e.target.parentElement.parentElement.dataset.id;
         fetch(`${productsUrl}/${id}`, {
@@ -162,12 +156,13 @@ updateProductForm.addEventListener('submit', (e) => {
         .then(res => res.json())
         .then(data => {
             // Display the message to the user
-            console.log(data);
+            alert(data.message);
             toggleForm('updateProduct'); // Close the update form
-            location.reload(); // Reload the page to reflect changes
+            // location.reload(); // Reload the page to reflect changes
         })
         .catch(error => {
             console.error('Error:', error);
+            alert("error",error);
             // Handle errors if necessary
         });
 });

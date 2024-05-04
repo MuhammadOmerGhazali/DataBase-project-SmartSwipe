@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reviews</title>
+    <link rel="stylesheet" href="/Frontend/css/admin.css">
+    <link rel="stylesheet" href="/Frontend/css/reviewsAdmin.css">
+</head>
+
+<body>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" id="menu-icon">&#9776;</label>
+    <section id="menu">
+        <div class="logo">
+            <img src="/Frontend/img/logo.png" alt="">
+            <h2>SmartSwipe</h2>
+        </div>
+        </div>
+        <div class="items">
+            <li>
+                <a href="/Frontend/html/Admin/adminhomepage.html">Dashboard</a>
+            </li>
+            <li>
+                <a href="/Frontend/html/Admin/products.html">Products</a>
+            </li>
+            <li>
+                <a href="/Frontend/html/Admin/reviews.html">Reviews</a>
+            </li>
+            <li>
+                <a href="#">Faqs</a>
+            </li>
+            <li>
+                <a href="#">Uaqs</a>
+            </li>
+            <li>
+                <a href="#">Orders</a>
+            </li>
+            <li>
+                <a href="#">Payments</a>
+            </li>
+            <li>
+                <a href="/Frontend/html/Admin/categories.html">Categories</a>
+            </li>
+            <li>
+                <a href="#">Payment Methods</a>
+            </li>
+
+            <li>
+                <a href="/Frontend/html/login.html" id="logout">Logout</a>
+            </li>
+
+        </div>
+    </section>
+
+
+    <div class="dashboard">
+        
+        <form id="updateReview">
+            <!-- Form to add a new product -->
+            <input type="text" name="ProductID" id="uproductID" placeholder="Product ID" required readonly>
+            <input type="text" name="CustomerID" id="ucustomerID" placeholder="Customer ID" required readonly>
+            <textarea name="review" id="ureview" placeholder="Review" required></textarea>
+            <input type="number" name="rating" id="urating" placeholder="Rating" required>
+
+            <button type="submit" id="uSubmit">Update</button>
+
+        </form>
+
+        <div class="allReviews">
+            <!-- Table to display all Reviews -->
+            <table class="reviews-table">
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Customer ID</th>
+                        <th>Review</th>
+                        <th>Rating</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="reviews-body">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="/Frontend/js/reviews.js"></script>
+    <script src="/Frontend/js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,12 +1,6 @@
 
 /* Form styling */
 
-
-
-
-
-
-
 #addbutton {
     width: 150px; /* Adjust width as needed */
     margin: 20px auto; /* Center the button horizontally */
@@ -72,15 +66,6 @@
 .delete-button:hover, .update-button:hover {
     background-color: #c82333;
 }
-
-.update-button {
-    background-color: #007bff;
-}
-
-.update-button:hover {
-    background-color: #0056b3;
-}
-
 
 #addProduct{
     display: none;

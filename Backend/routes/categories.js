@@ -9,11 +9,11 @@ router.get('/', (req, res) => {
             connetion.release();
             return res.status(500).send('Internal Server Error');
         }
-        connetion.query('Select * from categories', (err, brands) => {
+        connetion.query('Select * from categories', (err, categories) => {
             connetion.release();
 
             if (!err) {
-                res.send(brands)
+                res.send(categories)
             }
             else {
                 return res.status(500).json({ message: err.message });
@@ -34,7 +34,7 @@ router.post('/', (req, res) => {
             connetion.release();
             return res.status(500).json({message : 'Internal Server Error'});
         }
-        connetion.query('Insert into categories SET ? ',[req.body],(err,product) =>{
+        connetion.query('Insert into categories SET ? ',[req.body],(err,categories) =>{
             if(!err){
                 return res.status(200).json({message: 'Inserted successfully!'})
 
@@ -55,7 +55,7 @@ router.delete('/:id', (req, res) => {
             connetion.release();
             return res.status(500).json({message : 'Internal Server Error'});
         }
-        connetion.query('Delete from categories where Category = ?', [req.params.id], (err, products) => {
+        connetion.query('Delete from categories where Category = ?', [req.params.id], (err, categories) => {
             connetion.release();
 
             if (!err) {

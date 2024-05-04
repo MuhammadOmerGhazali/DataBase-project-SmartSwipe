@@ -158,17 +158,14 @@ updateProductForm.addEventListener('submit', (e) => {
             // Display the message to the user
             alert(data.message);
             toggleForm('updateProduct'); // Close the update form
-            // location.reload(); // Reload the page to reflect changes
+            location.reload(); // Reload the page to reflect changes
         })
         .catch(error => {
-            console.error('Error:', error);
+            console.log('Error:', error);
             alert("error",error);
-            // Handle errors if necessary
+            location.reload();
         });
 });
-
-
-
 
 document.addEventListener('DOMContentLoaded', function () {
     // Function to fetch categories and populate the dropdown

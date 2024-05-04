@@ -27,6 +27,50 @@ router.get('/:id', (req, res) => {
 
 
 
+//Get all Reviews
+router.get('/', (req, res) => {
+    pool.getConnection((err, connetion) => {
+        if (err){
+            connetion.release();
+            return res.status(500).send('Internal Server Error');
+        }
+        connetion.query('Select * from reviews', (err, reviews) => {
+            connetion.release();
+
+            if (!err) {
+                res.send(reviews)
+            }
+            else {
+                return res.status(500).json({ message: err.message });
+            }
+        })
+
+    })
+});
+
+//Get single Review
+router.get('/:productid/:customerid', (req, res) => {
+    pool.getConnection((err, connetion) => {
+        if (err){
+            connetion.release();
+            return res.status(500).send('Internal Server Error');
+        }
+        connetion.query('Select * from reviews where productId = ? and customerId= ?', [req.params.productid,req.params.customerid], (err, reviews) => {
+            connetion.release();
+
+            if (!err) {
+                res.send(reviews)
+            }
+            else {
+                return res.status(500).json({ message: err.message });
+            }
+        })
+
+    })
+});
+
+
+
 //Post a Review
 router.post('/', (req, res) => {
 
@@ -43,7 +87,7 @@ router.post('/', (req, res) => {
 
             }
             else{
-                return res.status(500).send(err.message);
+                return res.status(500).json({ message: err.message });
             }
         })
     })
@@ -62,10 +106,10 @@ router.delete('/:productid/:customerid', (req, res) => {
             connetion.release();
 
             if (!err) {
-                res.send("Deleted successfully!")
+                return res.status(200).json({message: 'Deleted successfully!'})
             }
             else {
-                return res.status(500).send(err.message);
+                return res.status(500).json({ message: err.message });
             }
         })
 
@@ -87,10 +131,10 @@ router.patch('/:productid/:customerid', (req, res) => {
         connection.query('UPDATE reviews SET ? WHERE productId = ? and customerId= ?', [req.body,req.params.productid,req.params.customerid], (err, reviews) => {
             connection.release();
             if (!err) {
-                res.send("Updated successfully!")
+                return res.status(200).json({message: 'Updated successfully!'})
             }
             else {
-                return res.status(500).send(err.message);
+                return res.status(500).json({ message: err.message });
             }
         });
     });

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders</title>
+    <link rel="stylesheet" href="/Frontend/css/admin.css">
+    <link rel="stylesheet" href="/Frontend/css/orders.css">
+</head>
+
+<body>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" id="menu-icon">&#9776;</label>
+    <section id="menu">
+        <div class="logo">
+            <img src="/Frontend/img/logo.png" alt="">
+            <h2>SmartSwipe</h2>
+        </div>
+        <div class="items">
+            <li>
+                <a href="/Frontend/html/Admin/dashboard.html">Dashboard</a>
+            </li>
+            <li>
+                <a href="/Frontend/html/Admin/products.html">Products</a>
+            </li>
+            <li>
+                <a href="/Frontend/html/Admin/reviews.html">Reviews</a>
+            </li>
+            <li>
+                <a href="/Frontend/html/Admin/faqs.html">Faqs</a>
+            </li>
+            <li>
+                <a href="/Frontend/html/Admin/uaqs.html" id="active">Uaqs</a>
+            </li>
+            <li>
+                <a href="">Orders</a>
+            </li>
+            <li>
+                <a href="">Payments</a>
+            </li>
+            <li>
+                <a href="/Frontend/html/Admin/categories.html">Categories</a>
+            </li>
+            <li>
+                <a href="/Frontend/html/Admin/paymentMethods.html">Payment Methods</a>
+            </li>
+
+            <li>
+                <a href="" id="logout">Logout</a>
+            </li>
+
+        </div>
+    </section>
+
+
+    <div class="dashboard">
+
+        <form id="updateOrder">
+            <input type="text" name="OrderID" id="orderId" readonly>
+            <input type="text" name="CustomerID" id="customerId" readonly>
+            <input type="text" name="Date" id="date" readonly>
+            <input type="text" name="TotalCost" id="totalCost" readonly>
+            <select type="text" name="OrderStatus" id="orderStatus" required>
+                <option value="" disabled selected>Select a status</option>
+                <option value="Pending">Pending</option>
+                <option value="Shipped">Shipped</option>
+                <option value="Delivered">Delivered</option>
+                <option value="Cancelled">Cancelled</option>
+            </select>
+            <input type="text" name="Address" id="address" readonly>
+
+            <button type="submit" id="uSubmit">Update Order</button>
+        </form>
+
+
+        <div class="allorders">
+            <!-- Table to display all products -->
+            <table class="orders-table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer Id</th>
+                        <th>Date</th>
+                        <th>Bill</th>
+                        <th>Address</th>
+                        <th>Order Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="orders-body">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="/Frontend/js/orders.js"></script>
+    <script src="/Frontend/js/script.js"></script>
+
+</body>
+
+</html>

@@ -6,24 +6,23 @@ const pool = require('../databaseConnection');
 
 //Get payment of an order
 router.get('/:id', (req, res) => {
-    pool.getConnection((err, connetion) => {
-        if (err){
-            connetion.release();
+    pool.getConnection((err, connection) => {
+        if (err) {
+            connection.release();
             return res.status(500).send('Internal Server Error');
         }
-        connetion.query('SELECT * FROM Order JOIN Payments ON Orders.orderID = Payments.orderID WHERE Orders.OrderID = ?',[req.params.id], (err, payments) => {
-            connetion.release();
+        connection.query('SELECT * FROM `Orders` JOIN Payments ON `Orders`.orderID = Payments.orderID WHERE `Orders`.orderID = ?', [req.params.id], (err, payments) => {
+            connection.release();
 
             if (!err) {
-                res.send(payments)
+                res.send(payments);
+            } else {
+                return res.status(500).send({ message: err.message });
             }
-            else {
-                return res.status(500).send(err.message);
-            }
-        })
-
-    })
+        });
+    });
 });
+
 
 
 //Get all payments
@@ -33,7 +32,7 @@ router.get('/', (req, res) => {
             connetion.release();
             return res.status(500).send('Internal Server Error');
         }
-        connetion.query('SELECT * FROM Orders JOIN Payments ON Orders.orderID = Payments.OrderID', (err, payments) => {
+        connetion.query('SELECT * FROM `Orders` JOIN Payments ON `Orders`.orderID = Payments.OrderID', (err, payments) => {
             connetion.release();
 
             if (!err) {
@@ -88,7 +87,7 @@ router.patch('/:id', (req, res) => {
             return res.status(500).send('Internal Server Error');
         }
         
-        connection.query('UPDATE payments SET paymentStatus = ? WHERE paymentID = ?', [req.body.OrderStatus, req.params.id], (err, orders) => {
+        connection.query('UPDATE payments SET paymentStatus = ? WHERE OrderID = ?', [req.body.PaymentStatus, req.params.id], (err, orders) => {
             connection.release();
             if (!err) {
                 res.send("Updated successfully!")

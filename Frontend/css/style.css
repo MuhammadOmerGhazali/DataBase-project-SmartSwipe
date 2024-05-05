@@ -308,6 +308,7 @@ border: 1px solid #e1e1e1;
 
 #prodetails{
   display: flex;
+  padding: 20px;
   margin-top: 20px;
 }
 
@@ -697,7 +698,14 @@ footer {
 .review-form form {
   width: 100%; /* Ensure the form takes the full width */
   max-width: 400px; /* Limit the maximum width of the form */
+  display: flex;
+  flex-direction: column;
+  gap: 20px
+}
 
+
+.review-form form label {
+  margin-bottom: 10px;
 }
 
 .review-form .form-group {

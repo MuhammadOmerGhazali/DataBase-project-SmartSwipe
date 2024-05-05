@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../databaseConnection');
 
-
-
 //Get all Reviews of a product
 router.get('/:id', (req, res) => {
     pool.getConnection((err, connetion) => {
@@ -13,7 +11,6 @@ router.get('/:id', (req, res) => {
         }
         connetion.query('Select * from reviews where productId= ?',[req.params.id], (err, reviews) => {
             connetion.release();
-
             if (!err) {
                 res.send(reviews)
             }
@@ -21,11 +18,8 @@ router.get('/:id', (req, res) => {
                 return res.status(500).send(err.message);
             }
         })
-
     })
 });
-
-
 
 //Get all Reviews
 router.get('/', (req, res) => {
@@ -69,8 +63,6 @@ router.get('/:productid/:customerid', (req, res) => {
     })
 });
 
-
-
 //Post a Review
 router.post('/', (req, res) => {
 
@@ -94,7 +86,6 @@ router.post('/', (req, res) => {
 
 });
 
-
 //Delete a Review
 router.delete('/:productid/:customerid', (req, res) => {
     pool.getConnection((err, connetion) => {
@@ -115,7 +106,6 @@ router.delete('/:productid/:customerid', (req, res) => {
 
     })
 });
-
 
 //Update a Review
 router.patch('/:productid/:customerid', (req, res) => {

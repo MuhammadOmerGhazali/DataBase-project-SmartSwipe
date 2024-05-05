@@ -8,19 +8,20 @@ fetch(productsUrl)
     );
 
 
-    const renderProducts = (products) => {
-        products.forEach(product => {
-    
-            const encodedProductId = encodeURIComponent(product.ProductID); 
-            output += `
+const renderProducts = (products) => {
+    products.forEach(product => {
+
+        const encodedProductId = encodeURIComponent(product.ProductID);
+        output += `
             <div class="pro">
-            <a href="/Frontend/html/Customer/${product.ProductID}">
-            <a href="/Frontend/html/Customer/${product.ProductID}">
+            <a href="/Frontend/html/Customer/sproduct.html?id=${product.ProductID}" onclick="viewProductDetails(${product.ProductID}); return false;">
             <img src="${product.ProductImage}" style="width: 92%;" alt="">
             </a>
+
+            
             <div>
                 <span>${product.Category}</span>
-                <a href="/Frontend/html/Customer/${product.ProductID}"><h5>${product.Title}</h5></a>
+                <a onclick="viewProductDetails(${product.ProductID})"><h5>${product.Title}</h5></a>
                 <div class="star">
                     <img src="/Frontend/img/star_shiny.png">
                     <img src="/Frontend/img/star_shiny.png">
@@ -33,6 +34,13 @@ fetch(productsUrl)
             <a href="#"><img src="/Frontend/img/shopping-cart.png"></a></a>
         </div>
             `;
-        });
-        productsBody.innerHTML = output;
-    }
+    });
+    productsBody.innerHTML = output;
+}
+
+
+function viewProductDetails(productId) {
+    // Open product detail page in a new tab or window
+    const productDetailUrl = `/Frontend/html/Customer/sproducts.html?id=${productId}`;
+    window.open(productDetailUrl, '_blank');
+}

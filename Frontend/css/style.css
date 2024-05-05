@@ -553,7 +553,7 @@ body {
   min-width: 250px;
   padding: 10px 12px;
   border: 1px solid #cce7d0;
-  border-radius: 25px;
+  border-radius: 0;
   cursor: pointer;
   box-shadow: 20px 20px 30px  rgba(0, 0, 0, 0.03);
   margin: 15px 0px;
@@ -564,17 +564,17 @@ body {
 } 
 #product1 .pro img{
   width: 100%;
-  border-radius: 20px;
+  border-radius: 0;
 }
 #product1 .pro .star img{
-  width: 10%;
+  width: 5%;
 }
 #product1 .pro a img{
     width: 10%;
-    /* margin-left: 10px; */
+    margin-left: 10px;
 }
 #product1 .pro {
-  text-align: start;
+  text-align: left;
   padding: 10px 0;
 }
 #product1 .pro span{

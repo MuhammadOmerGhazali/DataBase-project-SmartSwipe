@@ -55,6 +55,55 @@
         </div>
     </section>
     <br><br><br>
+    <section class="reviews">
+        <h2>Customer Reviews</h2>
+        <div class="review-form">
+            <h3>Add Your Review</h3>
+            <form id="reviewForm">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="rating">Rating:</label>
+                    <select id="rating" name="rating" required>
+                        <option value="5">5 Stars</option>
+                        <option value="4">4 Stars</option>
+                        <option value="3">3 Stars</option>
+                        <option value="2">2 Stars</option>
+                        <option value="1">1 Star</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="comment">Comment:</label>
+                    <textarea id="comment" name="comment" required></textarea>
+                </div>
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>
+        <div class="user-reviews">
+            <h3>Latest Reviews</h3>
+            <ul id="reviewsList">
+                <!-- Add more Reviews here uwu -->
+                <div class="review">
+                    <div class="user-info">
+                        <img src="/Frontend/img/user.png" alt="User Avatar">
+                        <p>John Doe</p>
+                    </div>
+                    <div class="rating">
+                        <img src="/Frontend/img/star_shiny.png">
+                        <img src="/Frontend/img/star_shiny.png">
+                        <img src="/Frontend/img/star_shiny.png">
+                        <img src="/Frontend/img/star_shiny.png">
+                        <img src="/Frontend/img/star_shiny.png">
+                    </div>
+                    <p class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+            </ul>
+        </div>
+    </section>
+    
+    
     <section id="product1" class="section-p1">
         <h2>Featured  Products</h2>
         <p>Summer collection new Modern design</p>

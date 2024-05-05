@@ -238,29 +238,6 @@
         MainImg.src = smallimg[3].src;
     }
  </script>
-<script>
-    async function displayProductData() {
-        // Fetch product data from the API
-        const productId = urlParams.get('id'); //product-details.html?id=1 url parameters
-        const product = await fetchProduct(productId);
-
-        // Get the container element where you want to display the product details
-        const productDetailsContainer = document.querySelector('#prodetails .single-pro-detail');
-
-        // Create HTML elements to display the product details
-        const productNameElement = document.createElement('h4');
-        productNameElement.textContent = product.name;
-        const productPriceElement = document.createElement('h2');
-        productPriceElement.textContent = `$${product.price}`;
-        const productDescriptionElement = document.createElement('span');
-        productDescriptionElement.textContent = product.description;
-
-        // Append the created elements to the container
-        productDetailsContainer.appendChild(productNameElement);
-        productDetailsContainer.appendChild(productPriceElement);
-        productDetailsContainer.appendChild(productDescriptionElement);
-    }
-    </script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="js/script.js"></script>

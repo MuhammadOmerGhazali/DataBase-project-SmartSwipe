@@ -754,3 +754,33 @@ footer {
   margin-left: 5px;
   color: #ffa500;
 }
+
+.category-select {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.category-select select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.category-select select:hover,
+.category-select select:focus {
+  border-color: #088178;
+}
+
+/* Style the dropdown arrow */
+.category-select select::after {
+  content: '\25BC'; /* Unicode character for downward arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none; /* Ensure the arrow doesn't interfere with clicking on the select */
+}

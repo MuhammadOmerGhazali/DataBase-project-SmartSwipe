@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uaqs</title>
+    <link rel="stylesheet" href="/Frontend/css/admin.css">
+    <link rel="stylesheet" href="/Frontend/css/uaqs.css">
+</head>
+
+<body>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" id="menu-icon">&#9776;</label>
+    <section id="menu">
+        <div class="logo">
+            <img src="/Frontend/img/logo.png" alt="">
+            <h2>SmartSwipe</h2>
+        </div>
+        <div class="items">
+            <li>
+                <a href="/Frontend/html/Admin/dashboard.html">Dashboard</a>
+            </li>
+            <li>
+                <a href="/Frontend/html/Admin/products.html">Products</a>
+            </li>
+            <li>
+                <a href="/Frontend/html/Admin/reviews.html">Reviews</a>
+            </li>
+            <li>
+                <a href="/Frontend/html/Admin/faqs.html">Faqs</a>
+            </li>
+            <li>
+                <a href="" id="active">Uaqs</a>
+            </li>
+            <li>
+                <a href="">Orders</a>
+            </li>
+            <li>
+                <a href="">Payments</a>
+            </li>
+            <li>
+                <a href="/Frontend/html/Admin/categories.html">Categories</a>
+            </li>
+            <li>
+                <a href="/Frontend/html/Admin/paymentMethods.html">Payment Methods</a>
+            </li>
+
+            <li>
+                <a href="" id="logout">Logout</a>
+            </li>
+
+        </div>
+    </section>
+
+
+    <div class="dashboard">
+        <button id="addUaqBtn" onclick="toggleForm('addUaq')">Add Uaq</button>
+
+
+        <form id="addUaq">
+            <!-- Form to add a new uaq -->
+            <input type="text" name="UaqId" id="uaqId" placeholder="Uaq ID" required>
+            
+            <select name="ProductId" id="productId" required>
+                <option value="" disabled selected>Select a Product</option>
+                <!-- Add categories from database -->
+            </select>
+            <input type="text" name="Customer" id="customerId" placeholder="Customer ID" required>
+
+            <textarea name="Question" id="question" placeholder="Question" required></textarea>
+
+            <textarea name="Answer" id="answer" placeholder="Answer" required></textarea>
+            <button type="submit" id="Submit">Add Uaq</button>
+        </form>
+
+
+
+        <form id="updateUaq">
+            <!-- Form to add a new uaq -->
+            <input type="text" name="uUaqId" id="uuaqId" placeholder="Uaq ID" required readonly>
+            <select name="uProductId" id="uproductId" required>
+                <option value="" disabled selected>Select a Product</option>
+                <!-- Add categories from database -->
+            </select>
+            <input type="text" name="uCustomer" id="ucustomerId" placeholder="Customer ID" required readonly>
+
+            <textarea name="uQuestion" id="uquestion" placeholder="Question" required></textarea>
+
+            <textarea name="uAnswer" id="uanswer" placeholder="Answer" required></textarea>
+            <button type="submit" id="uSubmit">Update Uaq</button>
+        </form>
+
+
+        <div class="alluaqs">
+            <!-- Table to display all products -->
+            <table class="uaqs-table">
+                <thead>
+                    <tr>
+                        <th>Uaq ID</th>
+                        <th>Product Id</th>
+                        <th>Customer ID</th>
+                        <th>Question</th>
+                        <th>Answer</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="uaqs-body">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="/Frontend/js/uaqs.js"></script>
+    <script src="/Frontend/js/script.js"></script>
+
+</body>
+
+</html>

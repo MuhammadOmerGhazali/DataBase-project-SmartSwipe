@@ -8,8 +8,8 @@ const pool = require('../databaseConnection');
 router.get('/', (req, res) => {
     pool.getConnection((err, connetion) => {
         if (err){
-            connetion.release();
-            return res.status(500).send('Internal Server Error');
+            // connetion.release();
+            return res.status(500).json({message : 'Internal Server Error'});
         }
         connetion.query('Select * from paymentmethods', (err, paymentMethods) => {
             connetion.release();
@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
                 res.send(paymentMethods)
             }
             else {
-                return res.status(500).send(err.message);
+                return res.status(500).send({message: err.message});
             }
         })
 
@@ -30,8 +30,8 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     pool.getConnection((err, connetion) => {
         if (err){
-            connetion.release();
-            return res.status(500).send('Internal Server Error');
+            // connetion.release();
+            return res.status(500).json({message : 'Internal Server Error'});
         }
         connetion.query('Select * from paymentmethods where MethodID = ?', [req.params.id], (err, paymentMethods) => {
             connetion.release();
@@ -40,7 +40,7 @@ router.get('/:id', (req, res) => {
                 res.send(paymentMethods)
             }
             else {
-                return res.status(500).send(err.message);
+                return res.status(500).send({message: err.message});
             }
         })
 
@@ -55,8 +55,9 @@ router.post('/', (req, res) => {
     
     pool.getConnection((err,connetion) =>{
         if (err){
-            connetion.release();
-            return res.status(500).send('Internal Server Error');
+            // connetion.release();
+            return res.status(500).json({message : 'Internal Server Error'})
+
         }
         connetion.query('Insert into paymentmethods SET ? ',[req.body],(err,paymentMethods) =>{
             if(!err){
@@ -64,7 +65,7 @@ router.post('/', (req, res) => {
 
             }
             else{
-                return res.status(500).send(err.message);
+                return res.status(500).send({message: err.message});
             }
         })
     })
@@ -76,8 +77,9 @@ router.post('/', (req, res) => {
 router.delete('/:id', (req, res) => {
     pool.getConnection((err, connetion) => {
         if (err){
-            connetion.release();
-            return res.status(500).send('Internal Server Error');
+            // connetion.release();
+            return res.status(500).json({message : 'Internal Server Error'});
+
         }
         connetion.query('Delete from paymentmethods where MethodID = ?', [req.params.id], (err, paymentMethods) => {
             connetion.release();
@@ -86,7 +88,7 @@ router.delete('/:id', (req, res) => {
                 res.status(200).send({message: 'Deleted successfully!'})
             }
             else {
-                return res.status(500).send(err.message);
+                return res.status(500).send({message: err.message});
             }
         })
 
@@ -101,8 +103,9 @@ router.patch('/:id', (req, res) => {
 
     pool.getConnection((err, connection) => {
         if (err) {
-            connection.release();
-            return res.status(500).send('Internal Server Error');
+            // connection.release();
+            return res.status(500).json({message : 'Internal Server Error'});
+
         }
         
         connection.query('UPDATE paymentmethods SET ? WHERE MethodID = ?', [req.body, req.params.id], (err, result) => {
@@ -111,7 +114,7 @@ router.patch('/:id', (req, res) => {
                 res.send("Updated successfully!")
             }
             else {
-                return res.status(500).send(err.message);
+                return res.status(500).send({message: err.message});
             }
         });
     });

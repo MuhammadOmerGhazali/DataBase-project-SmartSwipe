@@ -44,6 +44,7 @@ addMethodForm.addEventListener('submit', (e) => {
     const PaymentMethodName = document.querySelector('#paymentMethod').value;
     const Type = document.querySelector('#type').value;
 
+    // Make the POST request with the form data
     fetch(paymentMethodsUrl, {
         method: 'POST',
         headers: {
@@ -78,10 +79,6 @@ addMethodForm.addEventListener('submit', (e) => {
         // Handle errors if necessary
     });
 });
-
-
-
-
 
 
 //Deleting

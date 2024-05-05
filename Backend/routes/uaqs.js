@@ -10,7 +10,7 @@ router.get('/:id', (req, res) => {
         pool.getConnection((err, connection) => {
             if (err) {
                 // If there's an error in getting the connection, handle it here
-                return res.status(500).send('Internal Server Error');
+                return res.status(500).json({message : 'Internal Server Error'});
             }
             connection.query('SELECT * FROM uaqs WHERE productId = ?', [req.params.id], (err, uaqs) => {
                 connection.release();
@@ -18,13 +18,65 @@ router.get('/:id', (req, res) => {
                 if (!err) {
                     res.send(uaqs);
                 } else {
-                    return res.status(500).send(err.message);
+                    return res.status(500).json({message : err.message});
                 }
             });
         });
     } catch (err) {
         // If there's an exception, handle it here
-        return res.status(500).send('Internal Server Error');
+        return res.status(500).json({message : 'Internal Server Error'});
+    }
+});
+
+
+//Get SINGLE uaq
+router.get('/single/:id', (req, res) => {
+    try {
+        pool.getConnection((err, connection) => {
+            if (err) {
+                // If there's an error in getting the connection, handle it here
+                return res.status(500).json({message : 'Internal Server Error'});
+            }
+            connection.query('SELECT * FROM uaqs WHERE uaqId = ?', [req.params.id], (err, uaqs) => {
+                connection.release();
+
+                if (!err) {
+                    res.send(uaqs);
+                } else {
+                    return res.status(500).json({message : err.message});
+                }
+            });
+        });
+    } catch (err) {
+        // If there's an exception, handle it here
+        return res.status(500).json({message : 'Internal Server Error'});
+    }
+});
+
+
+
+//Get all uaqs
+
+router.get('/', (req, res) => {
+    try {
+        pool.getConnection((err, connection) => {
+            if (err) {
+                // If there's an error in getting the connection, handle it here
+                return res.status(500).json({message : 'Internal Server Error'});
+            }
+            connection.query('SELECT * FROM uaqs', (err, uaqs) => {
+                connection.release();
+
+                if (!err) {
+                    res.send(uaqs);
+                } else {
+                    return res.status(500).json({message : err.message});
+                }
+            });
+        });
+    } catch (err) {
+        // If there's an exception, handle it here
+        return res.status(500).json({message : 'Internal Server Error'});
     }
 });
 
@@ -39,21 +91,21 @@ router.post('/', (req, res) => {
         pool.getConnection((err, connetion) => {
             if (err) {
                 
-                return res.status(500).send('Internal Server Error');
+                return res.status(500).json({message : 'Internal Server Error'});
             }
             connetion.query('Insert into uaqs SET ? ', [req.body], (err, uaqs) => {
                 if (!err) {
-                    res.send("Inserted successfully!")
+                    return res.status(200).json({message : "Inserted successfully!"});
 
                 }
                 else {
-                    return res.status(500).send(err.message);
+                    return res.status(500).send({message:err.message});
                 }
             });
         });
     } catch (err) {
         // If there's an exception, handle it here
-        return res.status(500).send('Internal Server Error');
+        return res.status(500).json({message : 'Internal Server Error'});
     }
 
 });
@@ -63,17 +115,18 @@ router.post('/', (req, res) => {
 router.delete('/:id', (req, res) => {
     pool.getConnection((err, connetion) => {
         if (err) {
-            connetion.release();
-            return res.status(500).send('Internal Server Error');
+            // connetion.release();
+            return res.status(500).send( {message: 'Internal Server Error'});
         }
         connetion.query('Delete from uaqs where uaqID = ?', [req.params.id], (err, uaqs) => {
             connetion.release();
 
             if (!err) {
-                res.send("Deleted successfully!")
+                return res.status(200).json({message : "Deleted successfully!"});
+
             }
             else {
-                return res.status(500).send(err.message);
+                return res.status(500).send({message:err.message});
             }
         })
 
@@ -89,16 +142,17 @@ router.patch('/:id', (req, res) => {
     pool.getConnection((err, connection) => {
         if (err) {
             connection.release();
-            return res.status(500).send('Internal Server Error');
+            return res.status(500).send( {message: 'Internal Server Error'});
         }
 
         connection.query('UPDATE uaqs SET ? WHERE uaqID = ?', [req.body, req.params.id], (err, result) => {
             connection.release();
             if (!err) {
-                res.send("Updated successfully!")
+                return res.status(200).json({message : "Updated successfully!"});
+
             }
             else {
-                return res.status(500).send(err.message);
+                return res.status(500).send({message:err.message});
             }
         });
     });

@@ -8,8 +8,8 @@ const pool = require('../databaseConnection');
 router.get('/:id', (req, res) => {
     pool.getConnection((err, connetion) => {
         if (err){
-            connetion.release();
-            return res.status(500).send('Internal Server Error');
+            // connetion.release();
+            return res.status(500).json({message : 'Internal Server Error'});
         }
         connetion.query('Select * from reviews where productId= ?',[req.params.id], (err, reviews) => {
             connetion.release();
@@ -31,8 +31,8 @@ router.get('/:id', (req, res) => {
 router.get('/', (req, res) => {
     pool.getConnection((err, connetion) => {
         if (err){
-            connetion.release();
-            return res.status(500).send('Internal Server Error');
+            // connetion.release();
+            return res.status(500).json({message : 'Internal Server Error'});
         }
         connetion.query('Select * from reviews', (err, reviews) => {
             connetion.release();
@@ -52,8 +52,8 @@ router.get('/', (req, res) => {
 router.get('/:productid/:customerid', (req, res) => {
     pool.getConnection((err, connetion) => {
         if (err){
-            connetion.release();
-            return res.status(500).send('Internal Server Error');
+            // connetion.release();
+            return res.status(500).json({message : 'Internal Server Error'});
         }
         connetion.query('Select * from reviews where productId = ? and customerId= ?', [req.params.productid,req.params.customerid], (err, reviews) => {
             connetion.release();
@@ -78,8 +78,8 @@ router.post('/', (req, res) => {
     
     pool.getConnection((err,connetion) =>{
         if (err){
-            connetion.release();
-            return res.status(500).send('Internal Server Error');
+            // connetion.release();
+            return res.status(500).json({message : 'Internal Server Error'});
         }
         connetion.query('Insert into reviews SET ? ',[req.body],(err,reviews) =>{
             if(!err){
@@ -99,8 +99,8 @@ router.post('/', (req, res) => {
 router.delete('/:productid/:customerid', (req, res) => {
     pool.getConnection((err, connetion) => {
         if (err){
-            connetion.release();
-            return res.status(500).send('Internal Server Error');
+            // connetion.release();
+            return res.status(500).json({message : 'Internal Server Error'});
         }
         connetion.query('Delete from reviews where productId = ? and customerId= ?', [req.params.productid,req.params.customerid], (err, reviews) => {
             connetion.release();
@@ -124,8 +124,9 @@ router.patch('/:productid/:customerid', (req, res) => {
 
     pool.getConnection((err, connection) => {
         if (err) {
-            connection.release();
-            return res.status(500).send('Internal Server Error');
+            // connection.release();            
+
+            return res.status(500).json({message : 'Internal Server Error'});
         }
         
         connection.query('UPDATE reviews SET ? WHERE productId = ? and customerId= ?', [req.body,req.params.productid,req.params.customerid], (err, reviews) => {

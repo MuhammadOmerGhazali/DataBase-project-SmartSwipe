@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     pool.getConnection((err, connetion) => {
         if (err){
             // connetion.release();
-            return res.status(500).send('Internal Server Error');
+            return res.status(500).json({message : 'Internal Server Error'});
         }
         connetion.query('Select * from categories', (err, categories) => {
             connetion.release();
@@ -31,7 +31,7 @@ router.post('/', (req, res) => {
     
     pool.getConnection((err,connetion) =>{
         if (err){
-            connetion.release();
+            // connetion.release();
             return res.status(500).json({message : 'Internal Server Error'});
         }
         connetion.query('Insert into categories SET ? ',[req.body],(err,categories) =>{
@@ -52,7 +52,7 @@ router.post('/', (req, res) => {
 router.delete('/:id', (req, res) => {
     pool.getConnection((err, connetion) => {
         if (err){
-            connetion.release();
+            // connetion.release();
             return res.status(500).json({message : 'Internal Server Error'});
         }
         connetion.query('Delete from categories where Category = ?', [req.params.id], (err, categories) => {

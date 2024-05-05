@@ -168,6 +168,7 @@ updateProductForm.addEventListener('submit', (e) => {
         .catch(error => {
             console.error('Error updating product:', error);
             alert(error.message);
+            location.reload();
         });
 });
 

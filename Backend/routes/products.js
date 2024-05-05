@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     pool.getConnection((err, connection) => {
         if (err) {
-            connection.release();
+            // connection.release();
             return res.status(500).json({ message: 'Internal Server Error' });
         }
         connection.query('SELECT * FROM products WHERE ProductID = ?', [req.params.id], (err, product) => {
@@ -44,7 +44,7 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     pool.getConnection((err, connection) => {
         if (err) {
-            connection.release();
+            // connection.release();
             return res.status(500).json({ message: 'Internal Server Error' });
         }
         connection.query('INSERT INTO products SET ?', [req.body], (err, result) => {
@@ -61,7 +61,7 @@ router.post('/', (req, res) => {
 router.delete('/:id', (req, res) => {
     pool.getConnection((err, connection) => {
         if (err) {
-            connection.release();
+            // connection.release();
             return res.status(500).json({ message: 'Internal Server Error' });
         }
         connection.query('DELETE FROM products WHERE ProductID = ?', [req.params.id], (err, result) => {
@@ -81,7 +81,7 @@ router.delete('/:id', (req, res) => {
 router.patch('/:id', (req, res) => {
     pool.getConnection((err, connection) => {
         if (err) {
-            connection.release();
+            // connection.release();
             return res.status(500).json({ message: 'Internal Server Error' });
         }
         connection.query('UPDATE products SET ? WHERE ProductID = ?', [req.body, req.params.id], (err, result) => {

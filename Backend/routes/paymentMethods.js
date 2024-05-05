@@ -60,7 +60,7 @@ router.post('/', (req, res) => {
         }
         connetion.query('Insert into paymentmethods SET ? ',[req.body],(err,paymentMethods) =>{
             if(!err){
-                res.send("Inserted successfully!")
+                res.status(200).send({message: 'Inserted successfully!'})
 
             }
             else{
@@ -83,7 +83,7 @@ router.delete('/:id', (req, res) => {
             connetion.release();
 
             if (!err) {
-                res.send("Deleted successfully!")
+                res.status(200).send({message: 'Deleted successfully!'})
             }
             else {
                 return res.status(500).send(err.message);

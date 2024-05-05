@@ -6,7 +6,7 @@ const pool = require('../databaseConnection');
 router.get('/', (req, res) => {
     pool.getConnection((err, connetion) => {
         if (err){
-            connetion.release();
+            // connetion.release();
             return res.status(500).send('Internal Server Error');
         }
         connetion.query('Select * from categories', (err, categories) => {

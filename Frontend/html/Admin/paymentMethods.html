@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>reviews</title>
+    <title>Categories</title>
     <link rel="stylesheet" href="/Frontend/css/admin.css">
-    <link rel="stylesheet" href="/Frontend/css/reviewsAdmin.css">
+    <link rel="stylesheet" href="/Frontend/css/paymentMethod.css">
 </head>
 
 <body>
@@ -17,7 +17,6 @@
             <img src="/Frontend/img/logo.png" alt="">
             <h2>SmartSwipe</h2>
         </div>
-        </div>
         <div class="items">
             <li>
                 <a href="/Frontend/html/Admin/dashboard.html">Dashboard</a>
@@ -26,29 +25,29 @@
                 <a href="/Frontend/html/Admin/products.html">Products</a>
             </li>
             <li>
-                <a href="/Frontend/html/Admin/reviews.html" id="active">Reviews</a>
+                <a href="/Frontend/html/Admin/reviews.html">Reviews</a>
             </li>
             <li>
-                <a href="#">Faqs</a>
+                <a href="">Faqs</a>
             </li>
             <li>
-                <a href="#">Uaqs</a>
+                <a href="">Uaqs</a>
             </li>
             <li>
-                <a href="#">Orders</a>
+                <a href="">Orders</a>
             </li>
             <li>
-                <a href="#">Payments</a>
+                <a href="">Payments</a>
             </li>
             <li>
                 <a href="/Frontend/html/Admin/categories.html">Categories</a>
             </li>
             <li>
-                <a href="#">Payment Methods</a>
+                <a href="/Frontend/html/Admin/paymentMethods.html" id="active">Payment Methods</a>
             </li>
 
             <li>
-                <a href="/Frontend/html/login.html" id="logout">Logout</a>
+                <a href="" id="logout">Logout</a>
             </li>
 
         </div>
@@ -56,38 +55,38 @@
 
 
     <div class="dashboard">
-        
-        <form id="updateReview">
-            <!-- Form to add a new product -->
-            <input type="text" name="ProductID" id="uproductID" placeholder="Product ID" required readonly>
-            <input type="text" name="CustomerID" id="ucustomerID" placeholder="Customer ID" required readonly>
-            <textarea name="review" id="ureview" placeholder="Review" required></textarea>
-            <input type="number" name="rating" id="urating" placeholder="Rating" required>
+        <button id="addMethodBtn" onclick="toggleForm('addPaymentMethod')">Add Payment Method</button>
 
-            <button type="submit" id="uSubmit">Update</button>
 
+        <form id="addPaymentMethod">
+            <!-- Form to add a new category -->
+            <input type="text" name="MethodId" id="methodId" placeholder="Method ID" required>
+            <input type="text" name="PaymentMethod" id="paymentMethod" placeholder="Payment Method" required>
+            <input type="text" name="Type" id="type" placeholder="Type" required>
+
+            <button type="submit" id="Submit">Add Payment Method</button>
         </form>
 
-        <div class="allReviews">
-            <!-- Table to display all Reviews -->
-            <table class="reviews-table">
+
+        <div class="allMethods">
+            <!-- Table to display all products -->
+            <table class="paymentMethods-table">
                 <thead>
                     <tr>
-                        <th>Product ID</th>
-                        <th>Customer ID</th>
-                        <th>Review</th>
-                        <th>Rating</th>
+                        <th>Method ID</th>
+                        <th>Payment Method Name</th>
+                        <th>Type</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody class="reviews-body">
+                <tbody class="paymentMethods-body">
 
                 </tbody>
             </table>
         </div>
     </div>
 
-    <script src="/Frontend/js/reviews.js"></script>
+    <script src="/Frontend/js/paymentMethods.js"></script>
     <script src="/Frontend/js/script.js"></script>
 
 </body>

@@ -93,7 +93,10 @@ productsBody.addEventListener('click', (e) => {
         fetch(`${productsUrl}/${id}`, {
             method: 'DELETE',
         })
-            .then(res => res.json())
+            .then(res => {
+
+                return res.json();
+            })
             .then(data => {
                 alert(data.message);
                 location.reload(); // Reload the page after deletion
@@ -101,6 +104,7 @@ productsBody.addEventListener('click', (e) => {
     }
 
     else if (e.target.id === 'update-product') {
+        e.preventDefault();
 
         let id = e.target.parentElement.parentElement.dataset.id;
         fetch(`${productsUrl}/${id}`)
@@ -127,6 +131,7 @@ const updateProductForm = document.querySelector('#updateProduct');
 
 updateProductForm.addEventListener('submit', (e) => {
     // Select form inputs by their IDs
+    e.preventDefault(); // Prevent default form submission behavior
     const updatedProductID = document.querySelector('#uproductID').value;
     const updatedTitle = document.querySelector('#utitle').value;
     const updatedCategory = document.querySelector('#ucategory').value;
@@ -161,9 +166,8 @@ updateProductForm.addEventListener('submit', (e) => {
             location.reload(); // Reload the page to reflect changes
         })
         .catch(error => {
-            console.log('Error:', error);
-            alert("error",error);
-            location.reload();
+            console.error('Error updating product:', error);
+            alert(error.message);
         });
 });
 

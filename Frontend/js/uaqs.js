@@ -138,7 +138,7 @@ updateuaqForm.addEventListener('submit', (e) => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            FAQID:uaqID,
+            UAQID:uaqID,
             ProductID:ProductID,
             Question:Question,
             Answer:Answer
